@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4u_q5(e@+daty#1z)4i^z66vrw%utb&agzs*ql=xo)w*3=y_-#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['ai-resume-analyzer.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
 
 
 # Application definition
