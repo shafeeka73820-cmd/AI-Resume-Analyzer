@@ -6,9 +6,9 @@ from reportlab.pdfgen import canvas
 import io
 from pypdf import PdfReader
 
-# New home view for the landing page
+# Rectified home view to render home.html
 def home(request):
-    return render(request, 'resume_analyzer_app/upload.html')
+    return render(request, 'home.html')
 
 def analyze_resume(request):
     # Nee resume analysis code ikkada untadi
