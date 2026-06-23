@@ -6,6 +6,10 @@ from reportlab.pdfgen import canvas
 import io
 from pypdf import PdfReader
 
+# New home view for the landing page
+def home(request):
+    return render(request, 'resume_analyzer_app/upload.html')
+
 def upload_resume(request):
     analysis = None
     if request.method == 'POST' and 'resume' in request.FILES:
