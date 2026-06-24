@@ -1,6 +1,17 @@
 import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent  # ← IDHI UNDALI
 
 ALLOWED_HOSTS = ['.vercel.app', '.now.sh', 'localhost', '127.0.0.1']
+
+INSTALLED_APPS = [
+    'django.contrib.contenttypes',
+    'django.contrib.staticfiles',
+    'rest_framework',
+    'corsheaders',
+    'app',  
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -14,7 +25,7 @@ MIDDLEWARE = [
 ]
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DATABASES = {
