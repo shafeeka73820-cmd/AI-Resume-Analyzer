@@ -6,9 +6,9 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'dummy-key-for-vercel')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'vercel-dummy-key')
 DEBUG = False
-ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.staticfiles',
@@ -29,17 +29,16 @@ TEMPLATES = [
         'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.request',
-            ],
+            'context_processors': [],
         },
     },
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+# Vercel fix: Use dummy database to avoid readonly filesystem errors
 DATABASES = {'default': {'ENGINE': 'django.db.backends.dummy'}}
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
