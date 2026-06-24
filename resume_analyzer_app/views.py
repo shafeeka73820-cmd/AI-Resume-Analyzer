@@ -14,6 +14,9 @@ def analyze_resume(request):
     # Nee resume analysis code ikkada untadi
     return JsonResponse({"result": "Analysis complete"})
 
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
 def upload_resume(request):
     analysis = None
     if request.method == 'POST' and 'resume' in request.FILES:
