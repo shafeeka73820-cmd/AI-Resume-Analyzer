@@ -1,3 +1,5 @@
+from pathlib import Path
+BASE_DIR=Path(__file__).resolve().parent.parent
 import os
 DEBUG = False
 ALLOWED_HOSTS = ['.vercel.app', '.now.sh', 'localhost', '127.0.0.1']
