@@ -1,23 +1,14 @@
 import os
-from django.http import HttpResponse
-from django.conf import settings
+from django.http import JsonResponse
 from django.shortcuts import render
+from django.conf import settings
+from .services.analyzer_service import get_ai_analysis # Updated import path
 
-# Home view to render the upload page
 def home(request):
     return render(request, 'home.html')
 
-def index(request):
-    # Serve the index.html file directly from the static folder
-    index_path = os.path.join(settings.BASE_DIR, 'app', 'static', 'index.html')
-    with open(index_path, 'r', encoding='utf-8') as f:
-        return HttpResponse(f.read())
-
 def upload_resume(request):
-    return HttpResponse("Upload placeholder", status=200)
-
-def analyze_resume_api(request):
-    return HttpResponse("API Endpoint Placeholder", status=200)
-
-def export_pdf(request):
-    return HttpResponse("PDF export temporarily disabled", status=501)
+    if request.method == 'POST' and 'resume' in request.FILES:
+        # Simulate analysis for now
+        return JsonResponse({'analysis': 'This is a simulated AI analysis result.'})
+    return JsonResponse({'error': 'Invalid request'}, status=400)

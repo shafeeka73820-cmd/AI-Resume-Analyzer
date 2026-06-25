@@ -6,64 +6,39 @@
     <title>AI Resume Analyzer | Professional Career Optimizer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-text {
-            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(226, 232, 240, 1);
-        }
-    </style>
+    <style>body { font-family: 'Inter', sans-serif; }</style>
 </head>
-<body class="bg-slate-50 text-slate-900 min-h-screen">
-
-    <nav class="p-6 flex justify-between items-center max-w-5xl mx-auto">
-        <div class="text-2xl font-bold gradient-text">AI Resume Analyzer</div>
-        <div class="space-x-6 text-sm font-semibold text-slate-600">
-            <a href="#" class="hover:text-indigo-600">Features</a>
-            <a href="#" class="hover:text-indigo-600">Pricing</a>
-            <a href="#" class="bg-indigo-600 text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition">Get Started</a>
+<body class="bg-slate-50 text-slate-800">
+    <nav class="bg-white shadow-sm p-4 sticky top-0 z-10">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <span class="text-2xl font-bold text-indigo-600">AI Resume Analyzer</span>
         </div>
     </nav>
-
-    <main class="max-w-3xl mx-auto mt-16 px-4">
-        <div class="text-center mb-12">
-            <h1 class="text-5xl font-extrabold mb-4">Optimize your <span class="gradient-text">Career Path</span></h1>
-            <p class="text-lg text-slate-600">Get instant, AI-powered feedback on your resume in under 10 seconds.</p>
+    <main class="max-w-3xl mx-auto mt-12 px-6">
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-extrabold mb-4">Analyze Your Resume in 10 Seconds</h1>
+            <p class="text-slate-600">Get AI-driven insights to improve your ATS score.</p>
         </div>
-
-        <div class="glass-card p-8 rounded-3xl shadow-xl">
-            <form id="resumeForm" enctype="multipart/form-data" method="POST" action="{% url 'upload_resume' %}">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+            <form id="uploadForm" class="space-y-6">
                 {% csrf_token %}
-                <div class="border-4 border-dashed border-slate-200 rounded-2xl p-10 text-center hover:border-indigo-400 transition cursor-pointer">
+                <div id="drop-zone" class="border-2 border-dashed border-indigo-200 rounded-xl p-12 text-center hover:border-indigo-500 transition cursor-pointer bg-indigo-50/30">
                     <input type="file" id="resume" name="resume" accept=".pdf" class="hidden">
                     <label for="resume" class="cursor-pointer">
-                        <svg class="w-16 h-16 mx-auto text-indigo-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.9A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                        <p class="text-lg font-semibold">Drop your resume here</p>
-                        <p class="text-sm text-slate-500">PDF files up to 10MB</p>
+                        <p class="text-lg font-semibold text-indigo-700" id="file-label">Click to Upload Resume</p>
+                        <p class="text-sm text-slate-500">PDF only (Max 5MB)</p>
                     </label>
                 </div>
-                <button type="submit" class="w-full mt-6 bg-indigo-600 text-white font-bold py-4 rounded-xl hover:bg-indigo-700 transition transform hover:scale-[1.02]">
-                    Analyze My Resume
-                </button>
+                <button type="submit" id="submit-btn" class="w-full bg-indigo-600 text-white font-bold py-4 rounded-xl hover:bg-indigo-700 transition">Analyze My Resume</button>
             </form>
         </div>
-
-        <div class="grid grid-cols-3 gap-6 mt-16 text-center">
-            <div class="p-4"><h3 class="text-3xl font-bold text-indigo-600">10s</h3><p class="text-sm text-slate-500">Scan Time</p></div>
-            <div class="p-4"><h3 class="text-3xl font-bold text-indigo-600">99%</h3><p class="text-sm text-slate-500">Accuracy</p></div>
-            <div class="p-4"><h3 class="text-3xl font-bold text-indigo-600">Free</h3><p class="text-sm text-slate-500">Usage</p>
+        <div id="results" class="mt-12 hidden">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <h2 class="text-2xl font-bold mb-4">Analysis Result</h2>
+                <div id="result-content" class="text-slate-700 whitespace-pre-wrap"></div>
             </div>
         </div>
     </main>
-
-    <footer class="text-center mt-24 py-10 text-slate-500 text-sm">
-        &copy; 2026 AI Resume Analyzer. Built for your success.
-    </footer>
+    <script src="/static/app.js"></script>
 </body>
 </html>
