@@ -35,10 +35,10 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'config.urls'
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# Use PostgreSQL via DATABASE_URL environment variable
+# Use PostgreSQL via DATABASE_URL environment variable, or fallback to sqlite if not set
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL'),
+        default='sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3'),
         conn_max_age=600
     )
 }
