@@ -40,6 +40,9 @@ Resume text:
 Return ONLY valid JSON, no markdown or extra text."""
 
 
+def get_ai_analysis(resume_text: str, filename: str) -> ResumeAnalysis:
+    return analyze_resume(resume_text, filename)
+
 def analyze_resume(resume_text: str, filename: str) -> ResumeAnalysis:
     data = parse_json_from_llm(ANALYSIS_PROMPT.format(resume_text=resume_text))
 
