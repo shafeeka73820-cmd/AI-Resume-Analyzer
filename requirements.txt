@@ -8,6 +8,6 @@ openai>=1.58.0
 google-generativeai>=0.8.6
 python-docx>=1.1.0
 pypdf>=3.0.0
-python-dotenv>=1.0.0
+pydantic-settings
 PyPDF2>=3.0.1
 gunicorn
