@@ -36,6 +36,19 @@ REST_FRAMEWORK = {
 
 ROOT_URLCONF = 'backend.urls'
 
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.request',
+            ],
+        },
+    },
+]
+
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
