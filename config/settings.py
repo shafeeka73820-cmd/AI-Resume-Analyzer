@@ -6,11 +6,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent  # ← IDHI UNDALI
 ALLOWED_HOSTS = ['.vercel.app', '.now.sh', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
-    'django.contrib.contenttypes',
+    'django.contrib.contenttypes',  
+    'django.contrib.auth',          
+    'django.contrib.admin',         
+    'django.contrib.sessions',
+    'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'app',  
+    'app',  # nee app name em unda adi pettu
 ]
 
 MIDDLEWARE = [
