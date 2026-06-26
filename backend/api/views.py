@@ -3,7 +3,7 @@ import json
 import os
 import re
 import uuid
-import pdfplumber
+from pypdf import PdfReader
 from docx import Document
 from datetime import datetime, timezone
 from pathlib import Path
@@ -84,11 +84,11 @@ except Exception:
 
 def extract_text_from_pdf(file_path):
     text = ''
-    with pdfplumber.open(file_path) as pdf:
-        for page in pdf.pages:
-            page_text = page.extract_text()
-            if page_text:
-                text += page_text + '\n'
+    reader = PdfReader(file_path)
+    for page in reader.pages:
+        page_text = page.extract_text()
+        if page_text:
+            text += page_text + '\n'
     return text
 
 
