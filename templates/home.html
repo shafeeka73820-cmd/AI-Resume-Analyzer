@@ -7,7 +7,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--p50:#ecfeff;--p100:#cffafe;--p200:#a5f3fc;--p300:#67e8f9;--p400:#22d3ee;--p500:#06b6d4;--p600:#0891b2;--p700:#0e7490;--p800:#155e75;--p900:#164e63;--s50:#eff6ff;--s100:#dbeafe;--s200:#bfdbfe;--s300:#93c5fd;--s400:#60a5fa;--s500:#3b82f6;--s600:#2563eb;--s700:#1d4ed8;--s800:#1e40af;--s900:#1e3a8a;--su:#10b981;--su400:#34d399;--su500:#10b981;--su600:#059669;--w:#f59e0b;--w400:#fbbf24;--w500:#f59e0b;--w600:#d97706;--e:#ef4444;--e400:#f87171;--e500:#ef4444;--e600:#dc2626;--sl-50:#f8fafc;--sl-100:#f1f5f9;--sl-200:#e2e8f0;--sl-300:#cbd5e1;--sl-400:#94a3b8;--sl-500:#64748b;--sl-600:#475569;--sl-700:#334155;--sl-800:#1e293b;--sl-900:#0f172a;--sl-950:#020617;--bg:#0f172a;--bg2:#020617;--surface:#1e293b80;--surface-hover:#33415580;--border:#334155;--border-hover:#475569;--text:#fff;--text2:#cbd5e1;--text3:#94a3b8;--text-muted:#64748b;--radius-sm:6px;--radius-md:8px;--radius-lg:12px;--radius-xl:16px;--radius-2xl:24px;--radius-full:9999px;--gradient-primary:linear-gradient(135deg,#06b6d4,#2563eb);--gradient-secondary:linear-gradient(135deg,#3b82f6,#6366f1);--shadow-glow:0 0 20px rgba(6,182,212,.3)}
+:root{--p50:#ecfeff;--p100:#cffafe;--p200:#a5f3fc;--p300:#67e8f9;--p400:#22d3ee;--p500:#06b6d4;--p600:#0891b2;--p700:#0e7490;--p800:#155e75;--p900:#164e63;--s50:#eff6ff;--s100:#dbeafe;--s200:#bfdbfe;--s300:#93c5fd;--s400:#60a5fa;--s500:#3b82f6;--s600:#2563eb;--s700:#1d4ed8;--s800:#1e40af;--s900:#1e3a8a;--su:#10b981;--su400:#34d399;--su500:#10b981;--su600:#059669;--w:#f59e0b;--w400:#fbbf24;--w500:#f59e0b;--w600:#d97706;--e:#ef4444;--e400:#f87171;--e500:#ef4444;--e600:#dc2626;--sl-50:#f8fafc;--sl-100:#f1f5f9;--sl-200:#e2e8f0;--sl-300:#cbd5e1;--sl-400:#94a3b8;--sl-500:#64748b;--sl-600:#475569;--sl-700:#334155;--sl-800:#1e293b;--sl-900:#0f172a;--sl-950:#020617;--bg:#0f172a;--bg2:#020617;--surface:#1e293b80;--surface-hover:#33415580;--border:#334155;--border-hover:#475569;--text:#fff;--text2:#cbd5e1;--text3:#94a3b8;--text-muted:#64748b;--radius-sm:6px;--radius-md:8px;--radius-lg:12px;--radius-xl:16px;--radius-2xl:24px;--radius-full:9999px;--gradient-primary:linear-gradient(135deg,#06b6d4,#2563eb);--gradient-secondary:linear-gradient(135deg,#3b82f6,#6366f1);--shadow-glow:0 0 20px rgba(6,182,212,.3);--gradient-cyber:linear-gradient(135deg,#06b6d4,#8b5cf6,#ec4899);--gradient-warm:linear-gradient(135deg,#f59e0b,#ef4444,#ec4899)}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 *,*::after,*::before{box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);margin:0;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;transition:background .4s,color .4s;min-height:100vh;position:relative;z-index:0}
@@ -73,7 +73,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-
 .sug-card:hover{border-color:rgba(6,182,212,.15);transform:translateY(-2px)}
 .rm-phase{padding:1.25rem;border-radius:var(--radius-lg);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);background:var(--surface);border:1px solid var(--border);transition:all .2s ease;text-align:left}
 .rm-phase:hover{border-color:rgba(6,182,212,.15)}
-#toast-container{position:fixed;bottom:24px;right:24px;z-index:99999;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+#toast-container{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:99999;display:flex;flex-direction:column;gap:8px;pointer-events:none;align-items:center}
 .toast{pointer-events:auto;padding:14px 20px;border-radius:var(--radius-lg);background:rgba(15,15,25,.96);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid var(--border);font-size:.82rem;display:flex;align-items:center;gap:12px;transform:translateX(140%);opacity:0;transition:all .45s cubic-bezier(.34,1.56,.64,1);max-width:400px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
 .toast.show{transform:translateX(0);opacity:1}
 .toast-icon{width:22px;height:22px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0}
@@ -90,8 +90,8 @@ h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-
 #analyze-btn:not(:disabled):hover{transform:translateY(-2px);box-shadow:var(--shadow-glow),0 0 60px rgba(6,182,212,.1)}
 @media(max-width:640px){.glass{padding:1.25rem!important}.upload-zone{padding:2rem 1.25rem!important}}
 /* ─── Attract Animations ──────────── */
-.gradient-text{background-size:200% 200%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:gradientShift 4s ease infinite}
-@keyframes gradientShift{0%,to{background-position:0 50%}50%{background-position:100% 50%}}
+.gradient-text{background-size:400% 400%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:gradientShift 3s ease infinite}
+@keyframes gradientShift{0%{background-position:0% 50%}25%{background-position:50% 50%}50%{background-position:100% 50%}75%{background-position:50% 50%}to{background-position:0% 50%}}
 .pulse-glow{animation:pulseGlow 2s ease-in-out infinite}
 @keyframes pulseGlow{0%,to{box-shadow:0 0 20px rgba(6,182,212,.15)}50%{box-shadow:0 0 40px rgba(6,182,212,.35),0 0 80px rgba(6,182,212,.1)}}
 .float-icon{animation:floatIcon 3s ease-in-out infinite}
@@ -112,33 +112,117 @@ h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-
 @keyframes cardShine{0%{background-position:200% 0}40%,to{background-position:-200% 0}}
 .breathe-border{animation:breatheBorder 3s ease-in-out infinite}
 @keyframes breatheBorder{0%,to{border-color:rgba(6,182,212,.15)}50%{border-color:rgba(6,182,212,.35)}}
+/* ─── Scroll Progress ──────────── */
+#scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#06b6d4,#3b82f6,#8b5cf6);z-index:99999;width:0%;transition:width .1s linear;box-shadow:0 0 12px rgba(6,182,212,.4)}
+/* ─── Back to Top ──────────────── */
+#back-to-top{position:fixed;bottom:28px;left:28px;z-index:9998;width:44px;height:44px;border-radius:14px;background:rgba(15,15,25,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid var(--border);color:var(--text2);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transform:translateY(20px);transition:all .35s cubic-bezier(.34,1.56,.64,1);pointer-events:none;font-size:1.1rem}
+#back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+#back-to-top:hover{border-color:#06b6d4;color:#22d3ee;box-shadow:0 0 20px rgba(6,182,212,.2);transform:translateY(-3px)}
+/* ─── Wave Divider ─────────────── */
+.wave-divider{position:relative;width:100%;height:60px;overflow:hidden;margin:-1px 0}
+.wave-divider svg{position:absolute;bottom:0;width:100%;height:100%;fill:rgba(6,182,212,.03)}
+/* ─── 3D Tilt ──────────────────── */
+.tilt-card{transform-style:preserve-3d;perspective:800px}
+.tilt-card-inner{transition:transform .15s ease-out;transform-style:preserve-3d}
+.tilt-card-inner .card-shine{position:absolute;inset:0;border-radius:inherit;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.02) 45%,rgba(255,255,255,.04) 50%,rgba(255,255,255,.02) 55%,transparent 60%);background-size:300% 100%;animation:cardShine 6s ease-in-out infinite;pointer-events:none;z-index:2;will-change:transform}
+/* ─── Aurora BG ────────────────── */
+.aurora-bg{position:fixed;inset:0;z-index:-3;pointer-events:none;overflow:hidden}
+.aurora-bg::before{content:'';position:absolute;top:-40%;left:-20%;width:140%;height:140%;background:radial-gradient(ellipse at 30% 50%,rgba(6,182,212,.04) 0%,transparent 50%),radial-gradient(ellipse at 70% 20%,rgba(139,92,246,.03) 0%,transparent 50%),radial-gradient(ellipse at 50% 80%,rgba(16,185,129,.02) 0%,transparent 50%);animation:auroraDrift 15s ease-in-out infinite alternate;filter:blur(80px)}
+@keyframes auroraDrift{0%{transform:translate(0,0) scale(1)}33%{transform:translate(3%,-2%) scale(1.05)}66%{transform:translate(-2%,3%) scale(.95)}to{transform:translate(1%,-1%) scale(1.02)}}
+/* ─── Enhanced Toast ───────────── */
+.toast{box-shadow:0 12px 40px rgba(0,0,0,.5),0 0 30px rgba(6,182,212,.06)}
+/* ─── Skeleton Loader ──────────── */
+.skeleton{background:linear-gradient(90deg,var(--surface) 25%,rgba(255,255,255,.03) 50%,var(--surface) 75%);background-size:200% 100%;animation:skeletonShimmer 1.5s ease-in-out infinite;border-radius:8px}
+@keyframes skeletonShimmer{0%{background-position:200% 0}to{background-position:-200% 0}}
+/* ─── Button Ripple ────────────── */
+.btn-ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.15);transform:scale(0);animation:rippleAnim .6s ease-out;pointer-events:none}
+@keyframes rippleAnim{to{transform:scale(4);opacity:0}}
+/* ─── Smooth Scroll ────────────── */
+html{scroll-behavior:smooth}
+/* ─── Center Helpers ──────────── */
+.txt-center{text-align:center}
+.flex-center{display:flex;align-items:center;justify-content:center}
+.flex-col-center{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.mx-auto{margin-left:auto;margin-right:auto}
+/* ─── Glass Glow ──────────────── */
+.glass-glow{box-shadow:0 0 30px rgba(6,182,212,.08),0 0 60px rgba(6,182,212,.04),inset 0 1px 0 rgba(255,255,255,.05)}
+.glass-glow:hover{box-shadow:0 0 40px rgba(6,182,212,.15),0 0 80px rgba(6,182,212,.06),inset 0 1px 0 rgba(255,255,255,.08)}
+/* ─── Cyber Border ────────────── */
+.cyber-border{position:relative;overflow:hidden}
+.cyber-border::before{content:'';position:absolute;inset:-1px;border-radius:inherit;background:var(--gradient-cyber);z-index:-1;opacity:0;transition:opacity .4s;animation:borderRotate 3s linear infinite}
+.cyber-border:hover::before{opacity:1}
+@keyframes borderRotate{0%{filter:hue-rotate(0deg)}to{filter:hue-rotate(360deg)}}
+/* ─── Glow Text ───────────────── */
+.glow-text{text-shadow:0 0 40px rgba(6,182,212,.3),0 0 80px rgba(6,182,212,.1)}
+.glow-text-pink{text-shadow:0 0 40px rgba(236,72,153,.3),0 0 80px rgba(236,72,153,.1)}
+/* ─── Floating Particles V2 ───── */
+.floating-particle{position:fixed;pointer-events:none;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,.3),transparent 70%);animation:particleFloat 8s ease-in-out infinite}
+@keyframes particleFloat{0%,to{transform:translateY(0) scale(1);opacity:.3}50%{transform:translateY(-30px) scale(1.2);opacity:.6}}
+/* ─── Pulse Ring ──────────────── */
+.pulse-ring{position:relative}
+.pulse-ring::after{content:'';position:absolute;inset:-4px;border-radius:inherit;border:2px solid rgba(6,182,212,.15);animation:pulseRing 2s cubic-bezier(.215,.61,.355,1) infinite}
+@keyframes pulseRing{0%{transform:scale(1);opacity:1}to{transform:scale(1.08);opacity:0}}
+/* ─── Scale On Hover ──────────── */
+.scale-hover{transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+.scale-hover:hover{transform:scale(1.03);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+/* ─── Grid Card Layout ────────── */
+.center-grid{display:grid;place-items:center}
+/* ─── Section Spacing ─────────── */
+section{margin-bottom:2rem}
+/* ─── Badge Pulse ─────────────── */
+.badge-pulse{animation:badgePulse 2s ease-in-out infinite}
+@keyframes badgePulse{0%,to{box-shadow:0 0 0 0 rgba(6,182,212,.4)}50%{box-shadow:0 0 0 8px rgba(6,182,212,0)}}
+/* ─── Section Heading ────────── */
+.section-heading{display:inline-flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.03em;background:linear-gradient(135deg,#22d3ee,#3b82f6,#8b5cf6);background-size:400% 400%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradientShift 3s ease infinite;position:relative}
+.section-heading::after{content:'';position:absolute;bottom:-4px;left:0;width:100%;height:2.5px;border-radius:2px;background:linear-gradient(90deg,#22d3ee,#3b82f6,#8b5cf6,#22d3ee);background-size:300% 100%;animation:shimmerLine 3s linear infinite}
+.section-heading-sm{font-size:1.15rem}
+.section-heading-lg{font-size:1.4rem}
+.heading-bar{display:inline-block;width:4px;height:20px;border-radius:4px;background:linear-gradient(180deg,#22d3ee,#8b5cf6);flex-shrink:0;margin-right:4px;animation:breatheBorder 2s ease-in-out infinite}
+/* ─── Glow Card ──────────────── */
+.glow-card{position:relative;overflow:hidden}
+.glow-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,#06b6d4,#3b82f6,#8b5cf6,#ec4899,#06b6d4);opacity:0;transition:opacity .5s;animation:spinGradient 6s linear infinite}
+.glow-card:hover::before{opacity:.08}
+.glow-card::after{content:'';position:absolute;inset:1px;border-radius:inherit;background:var(--surface);z-index:1}
+.glow-card>*{position:relative;z-index:2}
+@keyframes spinGradient{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+/* ─── Attract: Border Glow ───── */
+.border-glow{box-shadow:0 0 15px rgba(6,182,212,.06),0 0 30px rgba(6,182,212,.03),inset 0 0 15px rgba(6,182,212,.03)}
+/* ─── Attract: Stat Counter ──── */
+.stat-value{font-size:2.5rem;font-weight:800;font-family:'Space Grotesk',sans-serif;background:linear-gradient(135deg,#22d3ee,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:.7rem;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:2px}
 </style>
 </head>
 <body>
+<div id="scroll-progress"></div>
+<div id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
 <div id="toast-container"></div>
 <div class="cursor-glow" id="cursor-glow"></div>
 <canvas id="particles-canvas"></canvas>
+<div class="aurora-bg"></div>
 <div class="noise-overlay"></div>
 <div class="grid-bg"></div>
 <div class="glow-orb glow-orb-1" style="animation:orbDrift 8s ease-in-out infinite;"></div>
 <div class="glow-orb glow-orb-2" style="animation:orbDrift2 10s ease-in-out infinite;"></div>
 <div class="glow-orb glow-orb-3" style="animation:orbDrift3 12s ease-in-out infinite;"></div>
+<div class="floating-particle" style="width:300px;height:300px;top:10%;left:5%;animation-delay:0s;background:radial-gradient(circle,rgba(6,182,212,.12),transparent 70%)"></div>
+<div class="floating-particle" style="width:200px;height:200px;top:60%;right:8%;animation-delay:2s;background:radial-gradient(circle,rgba(139,92,246,.1),transparent 70%)"></div>
+<div class="floating-particle" style="width:250px;height:250px;bottom:15%;left:15%;animation-delay:4s;background:radial-gradient(circle,rgba(236,72,153,.08),transparent 70%)"></div>
 <style>@keyframes orbDrift{0%,to{transform:translateX(-50%)}50%{transform:translateX(-40%)}}@keyframes orbDrift2{0%,to{transform:translate(0,0)}50%{transform:translate(-30px,-20px)}}@keyframes orbDrift3{0%,to{transform:translate(0,0)}50%{transform:translate(20px,30px)}}</style>
 
 <!-- Nav -->
 <nav style="position:sticky;top:0;z-index:50;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);background:rgba(15,23,42,.85);border-bottom:1px solid var(--border);">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center gap-4">
 <div class="flex items-center gap-3">
-<div class="w-9 h-9 rounded-xl flex items-center justify-center text-white font-bold text-sm" style="background:var(--gradient-primary);">AR</div>
+<div class="w-9 h-9 rounded-xl flex-center text-white font-bold text-sm" style="background:var(--gradient-primary);">AR</div>
 <span class="text-lg font-bold font-display" style="background:linear-gradient(135deg,#22d3ee,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Resume Analyzer</span>
 </div>
 <div class="flex items-center gap-2">
+<button class="btn" style="padding:6px 14px;font-size:.78rem;background:transparent;border:1px solid var(--border);color:var(--text2);border-radius:var(--radius-md);">Log In</button>
+<button class="btn" style="padding:6px 14px;font-size:.78rem;background:var(--gradient-primary);color:#fff;border:none;border-radius:var(--radius-md);box-shadow:0 0 20px rgba(6,182,212,.15);">Sign Up</button>
 <div class="flex items-center gap-2 px-3 py-1.5 rounded-full" style="background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.12);">
 <span class="w-1.5 h-1.5 rounded-full" id="status-dot" style="background:var(--text3);"></span>
 <span id="status-text" style="color:var(--text3);font-size:.75rem;">Connecting...</span>
 </div>
-<button class="btn" style="padding:6px 14px;font-size:.78rem;background:transparent;border:1px solid var(--border);color:var(--text2);border-radius:var(--radius-md);">Log In</button>
-<button class="btn" style="padding:6px 14px;font-size:.78rem;background:var(--gradient-primary);color:#fff;border:none;border-radius:var(--radius-md);box-shadow:0 0 20px rgba(6,182,212,.15);">Sign Up</button>
 <span id="theme-toggle" title="Toggle theme" style="cursor:pointer;font-size:.9rem;padding:4px 8px;border-radius:var(--radius-md);border:1px solid var(--border);transition:all .2s;background:rgba(255,255,255,.04);" onclick="toggleTheme()">🌙</span>
 <span title="Keyboard shortcuts" onclick="showKbd()" style="cursor:pointer;font-size:.78rem;padding:4px 8px;border-radius:var(--radius-md);border:1px solid var(--border);transition:all .2s;background:rgba(255,255,255,.04);">⌨️</span>
 </div>
@@ -148,116 +232,130 @@ h1,h2,h3,h4,h5,h6{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-
 <main class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
 
 <!-- Hero -->
-<div class="text-center mb-14 fade-in">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-6" style="background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.2);">
-<span style="color:#22d3ee;font-size:.78rem;font-weight:500;">AI-Powered Resume Optimization</span>
+<div class="grid lg:grid-cols-2 gap-10 lg:gap-16 mb-20 items-center fade-in">
+<div class="flex-col-center lg:items-start text-center lg:text-left">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 badge-pulse" style="background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.2);">
+<span style="color:#22d3ee;font-size:.78rem;font-weight:500;">✨ AI-Powered Resume Optimization</span>
 </div>
-<h1 class="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-5 leading-tight">
+<h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-5 leading-tight glow-text">
 Elevate Your Resume with<br>
-<span class="gradient-text" style="background:linear-gradient(135deg,#22d3ee,#3b82f6,#6366f1,#22d3ee);background-size:200% 200%;">AI-Powered Insights</span>
+<span class="gradient-text" style="background:linear-gradient(135deg,#22d3ee,#3b82f6,#a78bfa,#8b5cf6,#22d3ee);background-size:400% 400%;animation:gradientShift 3s ease infinite;">AI-Powered Insights</span>
 </h1>
-<p class="text-lg md:text-xl" style="color:var(--text3);max-width:36rem;margin:0 auto 8px;line-height:1.7;min-height:3.5rem;">
+<p class="text-base sm:text-lg" style="color:var(--text3);max-width:32rem;line-height:1.7;min-height:3.5rem;">
 <span id="typewriter-text">Get instant feedback, keyword optimization, and tailored suggestions to land your dream job with cutting-edge AI technology.</span><span id="cursor-blink" style="color:#22d3ee;animation:blink 1s step-end infinite;">|</span>
 </p>
 <style>@keyframes blink{50%{opacity:0}}</style>
+<div class="flex flex-wrap gap-2 mt-6 justify-center lg:justify-start">
+<span class="badge badge-primary badge-pulse">🚀 10K+ Resumes</span>
+<span class="badge badge-success">⭐ 97% Accuracy</span>
+<span class="badge badge-warning">🎯 3x Interviews</span>
+</div>
 
-<!-- Stats Row -->
-<div class="flex justify-center gap-8 sm:gap-14 mt-10">
-<div class="text-center"><div class="text-2xl sm:text-3xl font-bold font-display" style="background:linear-gradient(135deg,#22d3ee,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"><span class="stat-counter" data-target="10">0</span>K+</div><div style="color:var(--text3);font-size:.78rem;margin-top:2px;">Resumes Analyzed</div></div>
-<div class="text-center"><div class="text-2xl sm:text-3xl font-bold font-display" style="background:linear-gradient(135deg,#34d399,#059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"><span class="stat-counter" data-target="97">0</span>%</div><div style="color:var(--text3);font-size:.78rem;margin-top:2px;">Accuracy Rate</div></div>
-<div class="text-center"><div class="text-2xl sm:text-3xl font-bold font-display" style="background:linear-gradient(135deg,#fbbf24,#d97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"><span class="stat-counter" data-target="3">0</span>x</div><div style="color:var(--text3);font-size:.78rem;margin-top:2px;">Interview Success</div></div>
+</div>
+<div class="flex-col-center gap-4">
+<div class="flex justify-center gap-3 sm:gap-5 flex-nowrap">
+<div class="flex-col-center glass border-glow px-4 sm:px-7 py-3 sm:py-4" style="border-radius:var(--radius-lg);border:1px solid rgba(6,182,212,.12);min-width:110px;"><div class="text-xl sm:text-3xl font-bold font-display glow-text" style="background:linear-gradient(135deg,#22d3ee,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"><span class="stat-counter" data-target="10">0</span>K+</div><div style="color:var(--text3);font-size:.6rem;margin-top:2px;white-space:nowrap;">Resumes Analyzed</div></div>
+<div class="flex-col-center glass border-glow px-4 sm:px-7 py-3 sm:py-4" style="border-radius:var(--radius-lg);border:1px solid rgba(16,185,129,.12);min-width:110px;"><div class="text-xl sm:text-3xl font-bold font-display glow-text" style="background:linear-gradient(135deg,#34d399,#059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"><span class="stat-counter" data-target="97">0</span>%</div><div style="color:var(--text3);font-size:.6rem;margin-top:2px;white-space:nowrap;">Accuracy Rate</div></div>
+<div class="flex-col-center glass border-glow px-4 sm:px-7 py-3 sm:py-4" style="border-radius:var(--radius-lg);border:1px solid rgba(245,158,11,.12);min-width:110px;"><div class="text-xl sm:text-3xl font-bold font-display glow-text" style="background:linear-gradient(135deg,#fbbf24,#d97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"><span class="stat-counter" data-target="3">0</span>x</div><div style="color:var(--text3);font-size:.6rem;margin-top:2px;white-space:nowrap;">Interview Success</div></div>
+</div>
+<div class="glass p-5 sm:p-7 w-full max-w-md text-center" style="border-radius:var(--radius-lg);">
+<p style="color:var(--text3);font-size:.8rem;line-height:1.6;">Get instant AI-powered analysis with <strong style="color:#22d3ee;">97% accuracy</strong>. Optimize your resume for any job description in seconds.</p>
 </div>
 </div>
+</div>
+
+<div class="wave-divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C200,0 400,60 600,30 C800,0 1000,60 1200,30 L1200,60 L0,60 Z"/></svg></div>
 
 <!-- Upload Section -->
-<div class="glass p-6 sm:p-8 mb-8 reveal" style="animation-delay:.1s">
-<div class="grid md:grid-cols-2 gap-6 md:gap-8 items-start">
-<div>
-<h2 class="text-lg font-semibold mb-1">Upload Your Resume</h2>
-<p style="color:var(--text3);font-size:.85rem;margin-bottom:1.25rem;">Drag & drop or click to browse — PDF, DOCX supported</p>
-<form id="uploadForm">
+<div id="upload-section" class="glass p-0 mb-8 reveal glass-glow glow-card" style="animation-delay:.1s;overflow:hidden;">
+<div class="grid grid-cols-2 gap-0" style="min-height:420px;">
+<div class="flex-col-center p-5 sm:p-7" style="border-right:1px solid var(--border);">
+<div class="flex-col-center gap-2 mb-4"><div class="flex items-center gap-2"><span class="heading-bar"></span><h2 class="section-heading section-heading-lg" style="font-size:1.25rem;">Upload Resume</h2></div><p style="color:var(--text3);font-size:.78rem;">Drag & drop or click to browse — PDF, DOCX</p></div>
+<form id="uploadForm" class="w-full">
 <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
-<div id="drop-zone" class="upload-zone">
+<div id="drop-zone" class="upload-zone w-full" style="min-height:200px;padding:2rem 1.5rem;">
 <input type="file" id="resume" name="resume" accept=".pdf,.docx" style="display:none;">
-<div class="upload-icon">
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+<div class="upload-icon" style="width:56px;height:56px;">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
 </div>
-<p class="text-sm font-medium" id="file-label" style="color:var(--text2);">Drop your resume here or <strong style="color:#22d3ee;">browse</strong></p>
-<p style="color:var(--text3);font-size:.75rem;margin-top:4px;">Supports PDF, DOCX &middot; Max 5MB</p>
+<p class="text-sm font-medium text-center" id="file-label" style="color:var(--text2);font-size:.78rem;">Drop resume or <strong style="color:#22d3ee;">browse</strong></p>
+<p style="color:var(--text3);font-size:.65rem;margin-top:2px;">PDF, DOCX · Max 5MB</p>
 </div>
-<div id="file-info" class="hidden flex items-center gap-3 mt-4 p-4" style="border-radius:var(--radius-lg);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.12);">
-<div style="width:36px;height:36px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;background:rgba(6,182,212,.1);flex-shrink:0;">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+<div id="file-info" class="hidden flex items-center gap-3 mt-3 p-3 w-full" style="border-radius:var(--radius-lg);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.12);">
+<div style="width:32px;height:32px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;background:rgba(6,182,212,.1);flex-shrink:0;">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
 </div>
-<div class="flex-1 min-w-0"><p class="text-sm font-medium truncate" id="file-name" style="color:#22d3ee;"></p><p class="text-xs" id="file-size" style="color:var(--text3);"></p></div>
+<div class="flex-1 min-w-0"><p class="text-sm font-medium truncate" id="file-name" style="color:#22d3ee;font-size:.8rem;"></p><p class="text-xs" id="file-size" style="color:var(--text3);font-size:.65rem;"></p></div>
 <button type="button" id="remove-file" style="background:none;border:none;color:var(--text3);cursor:pointer;padding:4px;flex-shrink:0;">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
 </button>
 </div>
 </form>
 </div>
-<div>
-<h2 class="text-lg font-semibold mb-3">Job Description</h2>
-<div class="flex flex-wrap gap-1.5 mb-3">
-<button class="btn" style="padding:4px 12px;font-size:.65rem;background:rgba(6,182,212,.1);color:#22d3ee;border:1px solid rgba(6,182,212,.15);border-radius:var(--radius-md);" onclick="fillJD('senior')">Senior SWE</button>
-<button class="btn" style="padding:4px 12px;font-size:.65rem;background:rgba(139,92,246,.1);color:#a78bfa;border:1px solid rgba(139,92,246,.15);border-radius:var(--radius-md);" onclick="fillJD('frontend')">Frontend</button>
-<button class="btn" style="padding:4px 12px;font-size:.65rem;background:rgba(16,185,129,.1);color:#34d399;border:1px solid rgba(16,185,129,.15);border-radius:var(--radius-md);" onclick="fillJD('data')">Data Science</button>
-<button class="btn" style="padding:4px 12px;font-size:.65rem;background:rgba(245,158,11,.1);color:#fbbf24;border:1px solid rgba(245,158,11,.15);border-radius:var(--radius-md);" onclick="fillJD('devops')">DevOps</button>
+<div class="flex-col-center p-5 sm:p-7">
+<div class="flex items-center gap-2 justify-center mb-3"><span class="heading-bar"></span><h2 class="section-heading section-heading-lg" style="font-size:1.25rem;">Job Description</h2></div>
+<div class="jd-tabs flex flex-nowrap gap-1 mb-3 justify-center" style="padding:4px 6px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);">
+<button class="jd-tab active" data-role="senior" onclick="switchJDTab(this,'senior')" style="display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border:none;border-radius:8px;font-size:.68rem;font-weight:500;font-family:'Inter',sans-serif;cursor:pointer;transition:all .25s;white-space:nowrap;background:rgba(6,182,212,.12);color:#22d3ee;">⚙️ Senior SWE</button>
+<button class="jd-tab" data-role="frontend" onclick="switchJDTab(this,'frontend')" style="display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border:none;border-radius:8px;font-size:.68rem;font-weight:500;font-family:'Inter',sans-serif;cursor:pointer;transition:all .25s;white-space:nowrap;background:transparent;color:var(--text3);">🎨 Frontend</button>
+<button class="jd-tab" data-role="data" onclick="switchJDTab(this,'data')" style="display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border:none;border-radius:8px;font-size:.68rem;font-weight:500;font-family:'Inter',sans-serif;cursor:pointer;transition:all .25s;white-space:nowrap;background:transparent;color:var(--text3);">📊 Data Science</button>
+<button class="jd-tab" data-role="devops" onclick="switchJDTab(this,'devops')" style="display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border:none;border-radius:8px;font-size:.68rem;font-weight:500;font-family:'Inter',sans-serif;cursor:pointer;transition:all .25s;white-space:nowrap;background:transparent;color:var(--text3);">🐳 DevOps</button>
 </div>
-<textarea id="job-description" rows="4" placeholder="Paste the job description here to match against your resume..." class="glow-input"></textarea>
-<div id="jd-stats" class="hidden flex flex-wrap gap-2 mt-3"></div>
+<textarea id="job-description" rows="6" placeholder="Paste job description here to match against your resume..." class="glow-input" style="min-height:180px;"></textarea>
+<div id="jd-stats" class="hidden flex flex-wrap gap-2 mt-3 justify-center"></div>
+<div style="margin-top:8px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;">
+<span style="font-size:.55rem;padding:2px 10px;border-radius:var(--radius-full);background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.12);color:var(--text3);">✨ Paste or choose a template above</span>
 </div>
 </div>
-<div class="mt-4 flex items-center gap-3">
+</div>
+<div class="mt-6 flex flex-col sm:flex-row items-center gap-3 justify-center">
 <div id="ready-indicator" style="display:flex;align-items:center;gap:6px;padding:4px 14px;border-radius:var(--radius-full);font-size:.7rem;font-weight:500;">
 <span class="w-1.5 h-1.5 rounded-full" id="ready-dot" style="background:var(--text3);"></span>
 <span id="ready-text" style="color:var(--text3);">Waiting for resume</span>
 </div>
-<button id="analyze-btn" disabled class="btn btn-primary flex-1 py-3.5" style="font-size:1rem;">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+<button id="analyze-btn" disabled class="btn btn-primary flex-1 py-4 scale-hover" style="font-size:1.1rem;font-weight:700;max-width:340px;">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
 Analyze Resume
-</button>
-<button class="btn btn-primary pulse-glow" style="padding:.75rem 1.75rem;font-size:.95rem;flex-shrink:0;background:var(--gradient-primary);">
-Start Analyzing – It's Free
 </button>
 </div>
 </div>
 
+<div class="wave-divider"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z"/></svg></div>
+
 <!-- How It Works -->
-<div class="text-center mb-10 reveal">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4" style="background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.2);">
-<span style="color:#22d3ee;font-size:.78rem;font-weight:500;">How It Works</span>
+<div class="flex-col-center text-center mb-10 reveal">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-3" style="background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.2);">
+<span style="color:#22d3ee;font-size:.78rem;font-weight:500;">🚀 How It Works</span>
 </div>
-<h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-3">Three Simple Steps</h2>
-<p style="color:var(--text3);font-size:1rem;max-width:32rem;margin:0 auto;">Transform your resume into a job-winning machine in minutes.</p>
+<h2 class="section-heading text-3xl md:text-4xl" style="font-size:2.25rem;">Three Simple Steps</h2>
+<p style="color:var(--text3);font-size:1.05rem;max-width:32rem;margin:0 auto;">Transform your resume into a job-winning machine in minutes.</p>
 </div>
-<div class="grid md:grid-cols-3 gap-4 mb-8">
-<div class="feature-card slide-up" style="animation-delay:0s">
-<div class="step-badge">1</div>
-<div class="feature-card-icon float-icon" style="width:52px;height:52px;border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:linear-gradient(135deg,rgba(6,182,212,.12),rgba(59,130,246,.06));border:1px solid rgba(6,182,212,.15);font-size:1.3rem;transition:transform .2s ease;">🧠</div>
-<h3 class="text-sm font-semibold mb-2">AI Analysis</h3>
+<div class="grid md:grid-cols-3 gap-5 mb-8">
+<div class="feature-card slide-up cyber-border" style="animation-delay:0s">
+<div class="step-badge pulse-ring">1</div>
+<div class="feature-card-icon float-icon" style="width:56px;height:56px;border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:linear-gradient(135deg,rgba(6,182,212,.15),rgba(59,130,246,.08));border:1px solid rgba(6,182,212,.2);font-size:1.5rem;transition:transform .2s ease;">🧠</div>
+<h3 class="text-sm font-semibold mb-2" style="color:#22d3ee;">AI Analysis</h3>
 <p style="color:var(--text3);font-size:.78rem;line-height:1.6;">Advanced artificial intelligence scans your resume and identifies strengths, weaknesses, and optimization opportunities with precision.</p>
 <div class="card-shine"></div>
 </div>
-<div class="feature-card slide-up" style="animation-delay:.08s">
-<div class="step-badge">2</div>
-<div class="feature-card-icon float-icon float-icon-delay" style="width:52px;height:52px;border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(16,185,129,.06));border:1px solid rgba(16,185,129,.15);font-size:1.3rem;transition:transform .2s ease;">📊</div>
-<h3 class="text-sm font-semibold mb-2">ATS Scoring</h3>
+<div class="feature-card slide-up cyber-border" style="animation-delay:.08s">
+<div class="step-badge pulse-ring">2</div>
+<div class="feature-card-icon float-icon float-icon-delay" style="width:56px;height:56px;border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(16,185,129,.08));border:1px solid rgba(16,185,129,.2);font-size:1.5rem;transition:transform .2s ease;">📊</div>
+<h3 class="text-sm font-semibold mb-2" style="color:#34d399;">ATS Scoring</h3>
 <p style="color:var(--text3);font-size:.78rem;line-height:1.6;">Get a precise ATS compatibility score with breakdowns for keywords, format, and content quality to ensure your resume gets noticed.</p>
 <div class="card-shine"></div>
 </div>
-<div class="feature-card slide-up" style="animation-delay:.16s">
-<div class="step-badge">3</div>
-<div class="feature-card-icon float-icon float-icon-delay2" style="width:52px;height:52px;border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(245,158,11,.06));border:1px solid rgba(245,158,11,.15);font-size:1.3rem;transition:transform .2s ease;">🎯</div>
-<h3 class="text-sm font-semibold mb-2">Keyword Optimization</h3>
+<div class="feature-card slide-up cyber-border" style="animation-delay:.16s">
+<div class="step-badge pulse-ring">3</div>
+<div class="feature-card-icon float-icon float-icon-delay2" style="width:56px;height:56px;border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;background:linear-gradient(135deg,rgba(245,158,11,.15),rgba(245,158,11,.08));border:1px solid rgba(245,158,11,.2);font-size:1.5rem;transition:transform .2s ease;">🎯</div>
+<h3 class="text-sm font-semibold mb-2" style="color:#fbbf24;">Keyword Optimization</h3>
 <p style="color:var(--text3);font-size:.78rem;line-height:1.6;">Target the right keywords and phrases that recruiters and ATS systems are looking for to maximize your application success rate.</p>
 <div class="card-shine"></div>
 </div>
 </div>
 
 <!-- Pipeline -->
-<div class="glass p-5 sm:p-6 mb-8 reveal reveal-delay-1">
-<div class="flex items-center gap-3 mb-2"><h2 class="text-sm font-semibold">Analysis Pipeline</h2></div>
+<div class="glass p-5 sm:p-6 mb-8 reveal reveal-delay-1 glass-glow">
+<div class="flex-col-center gap-1 mb-3"><div class="flex items-center gap-2"><span class="heading-bar"></span><h2 class="section-heading section-heading-sm text-center">⚡ Pipeline</h2><span class="heading-bar" style="background:linear-gradient(180deg,#8b5cf6,#22d3ee);"></span></div></div>
 <div class="pipeline" id="pipeline">
 <div class="p-node"><div class="p-dot" id="pipe-u"></div><span class="p-label" id="pl-u">Upload</span></div>
 <div class="p-line" id="pl0"></div>
@@ -273,12 +371,12 @@ Start Analyzing – It's Free
 
 <!-- Loading -->
 <div id="loading" class="hidden mb-8">
-<div class="glass text-center" style="padding:2.5rem 2rem;">
-<div class="flex flex-col items-center gap-3">
-<div style="display:flex;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#06b6d4;animation:dotBounce 1.3s ease-in-out infinite;"></span><span style="width:8px;height:8px;border-radius:50%;background:#06b6d4;animation:dotBounce 1.3s ease-in-out infinite;animation-delay:.15s;"></span><span style="width:8px;height:8px;border-radius:50%;background:#06b6d4;animation:dotBounce 1.3s ease-in-out infinite;animation-delay:.3s;"></span></div>
+<div class="glass text-center glass-glow" style="padding:2.5rem 2rem;">
+<div class="flex-col-center gap-3">
+<div style="display:flex;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#06b6d4;animation:dotBounce 1.3s ease-in-out infinite;"></span><span style="width:10px;height:10px;border-radius:50%;background:#06b6d4;animation:dotBounce 1.3s ease-in-out infinite;animation-delay:.15s;"></span><span style="width:10px;height:10px;border-radius:50%;background:#06b6d4;animation:dotBounce 1.3s ease-in-out infinite;animation-delay:.3s;"></span></div>
 <p class="font-medium text-base" id="loading-text" style="color:var(--text);">Initializing analysis</p>
 <p style="color:var(--text2);font-size:.8rem;" id="loading-subtext">Preparing pipeline</p>
-<div style="width:260px;margin:8px auto 0;" class="progress-track"><div id="loading-bar" class="progress-fill" style="width:0%;background:linear-gradient(90deg,#06b6d4,#22d3ee);"></div></div>
+<div style="width:280px;margin:8px auto 0;" class="progress-track"><div id="loading-bar" class="progress-fill" style="width:0%;background:linear-gradient(90deg,#06b6d4,#22d3ee,#8b5cf6);"></div></div>
 </div>
 </div>
 </div>
@@ -289,27 +387,27 @@ Start Analyzing – It's Free
 <!-- Terminal & Infrastructure Row -->
 <div class="grid lg:grid-cols-2 gap-5 mb-8">
 <!-- Terminal -->
-<div class="glass p-5 sm:p-6 reveal reveal-delay-2">
-<div class="flex items-center gap-2 mb-3"><h2 class="text-sm font-semibold">System Log</h2></div>
+<div class="glass p-5 sm:p-6 reveal reveal-delay-2 glass-glow">
+<div class="flex items-center justify-center gap-2 mb-3"><span class="heading-bar"></span><h2 class="section-heading section-heading-sm">💻 System Log</h2><span class="heading-bar" style="background:linear-gradient(180deg,#8b5cf6,#22d3ee);"></span></div>
 <div style="background:rgba(0,0,0,.35);border:1px solid var(--border);border-radius:12px;padding:1rem;font-family:'JetBrains Mono',monospace;font-size:.7rem;line-height:1.9;overflow:hidden;">
-<div style="display:flex;gap:6px;margin-bottom:8px;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef4444;"></span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f59e0b;"></span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;"></span><span style="font-size:.5rem;color:var(--text2);margin-left:4px;">resume-analyzer</span></div>
+<div style="display:flex;gap:6px;margin-bottom:8px;align-items:center;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef4444;"></span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f59e0b;"></span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#10b981;"></span><span style="font-size:.5rem;color:var(--text2);margin-left:4px;">resume-analyzer</span></div>
 <div id="terminal-lines"></div>
 </div>
 </div>
 
 <!-- Infrastructure -->
-<div class="glass p-5 sm:p-6 reveal reveal-delay-2">
-<div class="flex items-center gap-2 mb-4"><h2 class="text-sm font-semibold">Infrastructure</h2></div>
-<div class="flex items-center justify-center flex-wrap gap-1 sm:gap-3">
-<div class="text-center"><div style="width:44px;height:44px;border-radius:var(--radius-lg);margin:0 auto 6px;background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.15);font-size:1rem;display:flex;align-items:center;justify-content:center;">📄</div><span style="font-size:.6rem;font-weight:600;display:block;">Upload</span></div>
-<span style="color:var(--text-muted);font-size:1rem;opacity:.3;margin-bottom:24px;">→</span>
-<div class="text-center"><div style="width:44px;height:44px;border-radius:var(--radius-lg);margin:0 auto 6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.15);font-size:1rem;display:flex;align-items:center;justify-content:center;">🔍</div><span style="font-size:.6rem;font-weight:600;display:block;">Parse</span></div>
-<span style="color:var(--text-muted);font-size:1rem;opacity:.3;margin-bottom:24px;">→</span>
-<div class="text-center"><div style="width:44px;height:44px;border-radius:var(--radius-lg);margin:0 auto 6px;background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.15);font-size:1rem;display:flex;align-items:center;justify-content:center;">🧠</div><span style="font-size:.6rem;font-weight:600;display:block;">AI Analyze</span></div>
-<span style="color:var(--text-muted);font-size:1rem;opacity:.3;margin-bottom:24px;">→</span>
-<div class="text-center"><div style="width:44px;height:44px;border-radius:var(--radius-lg);margin:0 auto 6px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.15);font-size:1rem;display:flex;align-items:center;justify-content:center;">📊</div><span style="font-size:.6rem;font-weight:600;display:block;">Score</span></div>
+<div class="glass p-5 sm:p-6 reveal reveal-delay-2 glass-glow">
+<div class="flex items-center justify-center gap-2 mb-4"><span class="heading-bar"></span><h2 class="section-heading section-heading-sm">🛠️ Infrastructure</h2><span class="heading-bar" style="background:linear-gradient(180deg,#8b5cf6,#22d3ee);"></span></div>
+<div class="flex flex-nowrap gap-1 justify-center" style="padding:4px 6px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);">
+<span style="display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:8px;font-size:.68rem;font-weight:500;white-space:nowrap;background:rgba(6,182,212,.12);color:#22d3ee;">📄 Upload</span>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text3);opacity:.3;flex-shrink:0;"><path d="M9 18l6-6-6-6"/></svg>
+<span style="display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:8px;font-size:.68rem;font-weight:500;white-space:nowrap;background:transparent;color:var(--text3);">🔍 Parse</span>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text3);opacity:.3;flex-shrink:0;"><path d="M9 18l6-6-6-6"/></svg>
+<span style="display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:8px;font-size:.68rem;font-weight:500;white-space:nowrap;background:transparent;color:var(--text3);">🧠 AI Analyze</span>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text3);opacity:.3;flex-shrink:0;"><path d="M9 18l6-6-6-6"/></svg>
+<span style="display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:8px;font-size:.68rem;font-weight:500;white-space:nowrap;background:transparent;color:var(--text3);">📊 Score</span>
 </div>
-<div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:4px;justify-content:center;">
+<div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:4px;justify-content:center;">
 <span style="font-size:.5rem;padding:2px 8px;border-radius:var(--radius-full);background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.15);color:#22d3ee;">REST API</span>
 <span style="font-size:.5rem;padding:2px 8px;border-radius:var(--radius-full);background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.15);color:#34d399;">ATS Engine</span>
 <span style="font-size:.5rem;padding:2px 8px;border-radius:var(--radius-full);background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.15);color:#fbbf24;">Skill Gap</span>
@@ -320,44 +418,49 @@ Start Analyzing – It's Free
 <!-- Roadmaps + Feedback -->
 <div class="grid lg:grid-cols-2 gap-5 mb-8">
 <!-- Roadmaps -->
-<div class="glass p-5 sm:p-6 fade-in" style="animation-delay:.4s">
-<div class="flex items-center gap-3 mb-4">
-<div style="width:36px;height:36px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(139,92,246,.06));border:1px solid rgba(139,92,246,.1);">🗺️</div>
-<div><h2 class="text-sm font-semibold">Career Roadmaps</h2><p style="color:var(--text3);font-size:.72rem;">Guided learning paths for top tech roles</p></div>
+<div class="glass p-5 sm:p-6 fade-in glass-glow" style="animation-delay:.4s">
+<div class="flex-col-center gap-3 mb-4">
+<div class="flex items-center gap-2"><span class="heading-bar"></span><h2 class="section-heading section-heading-sm">🗺️ Career Roadmaps</h2><span class="heading-bar" style="background:linear-gradient(180deg,#8b5cf6,#22d3ee);"></span></div><p style="color:var(--text3);font-size:.7rem;margin-top:6px;">Guided learning paths for top tech roles</p>
 </div>
-<div id="roadmaps-grid" class="grid grid-cols-2 gap-2">
+<div id="roadmaps-grid" class="grid grid-cols-2 gap-3">
 <div class="col-span-full text-center py-4" style="color:var(--text2);font-size:.8rem;">Loading roadmaps...</div>
 </div>
 </div>
 <div id="roadmap-detail" class="hidden slide-up"></div>
 
 <!-- Feedback -->
-<div class="glass p-5 sm:p-6 fade-in" style="animation-delay:.45s">
-<div class="flex items-center gap-3 mb-4">
-<div style="width:36px;height:36px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(245,158,11,.06));border:1px solid rgba(245,158,11,.1);">💬</div>
-<div><h2 class="text-sm font-semibold">User Feedback</h2><p style="color:var(--text3);font-size:.72rem;">What professionals say</p></div>
+<div class="glass p-5 sm:p-6 fade-in glass-glow" style="animation-delay:.45s">
+<div class="flex-col-center gap-3 mb-4">
+<div class="flex items-center gap-2"><span class="heading-bar"></span><h2 class="section-heading section-heading-sm">💬 User Feedback</h2><span class="heading-bar" style="background:linear-gradient(180deg,#8b5cf6,#22d3ee);"></span></div><p style="color:var(--text3);font-size:.7rem;margin-top:6px;">What professionals say</p>
 </div>
-<div class="space-y-3">
-<div class="feature-card" style="padding:1rem;text-align:left;"><div class="flex items-center gap-3 mb-2"><div style="width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--gradient-primary);color:#fff;font-size:.7rem;font-weight:700;">SK</div><div><div style="font-size:.8rem;font-weight:600;">Sarah K.</div><div style="font-size:.65rem;color:var(--text2);">Frontend Developer</div></div></div><div style="color:#fbbf24;font-size:.7rem;">★★★★★</div><p style="font-size:.75rem;color:var(--text3);margin-top:6px;line-height:1.5;">The ATS score helped me identify gaps. Landed 3 interviews in 2 weeks!</p></div>
-<div class="feature-card" style="padding:1rem;text-align:left;"><div class="flex items-center gap-3 mb-2"><div style="width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#8b5cf6,#7c3aed);color:#fff;font-size:.7rem;font-weight:700;">MR</div><div><div style="font-size:.8rem;font-weight:600;">Mike R.</div><div style="font-size:.65rem;color:var(--text3);">Data Scientist</div></div></div><div style="color:#fbbf24;font-size:.7rem;">★★★★★</div><p style="font-size:.75rem;color:var(--text3);margin-top:6px;line-height:1.5;">The roadmap feature is incredible. Clear, actionable steps to upskill.</p></div>
+<div class="grid sm:grid-cols-2 gap-3">
+<div class="feature-card scale-hover" style="padding:1rem;text-align:center;"><div class="flex-col-center mb-2"><div style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--gradient-primary);color:#fff;font-size:.7rem;font-weight:700;">SK</div><div class="text-center mt-2"><div style="font-size:.8rem;font-weight:600;">Sarah K.</div><div style="font-size:.65rem;color:var(--text2);">Frontend Developer</div></div></div><div style="color:#fbbf24;font-size:.7rem;">★★★★★</div><p style="font-size:.75rem;color:var(--text3);margin-top:6px;line-height:1.5;text-align:center;">"The ATS score helped me identify gaps. Landed 3 interviews in 2 weeks!"</p></div>
+<div class="feature-card scale-hover" style="padding:1rem;text-align:center;"><div class="flex-col-center mb-2"><div style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#8b5cf6,#7c3aed);color:#fff;font-size:.7rem;font-weight:700;">MR</div><div class="text-center mt-2"><div style="font-size:.8rem;font-weight:600;">Mike R.</div><div style="font-size:.65rem;color:var(--text3);">Data Scientist</div></div></div><div style="color:#fbbf24;font-size:.7rem;">★★★★★</div><p style="font-size:.75rem;color:var(--text3);margin-top:6px;line-height:1.5;text-align:center;">"The roadmap feature is incredible. Clear, actionable steps to upskill."</p></div>
 </div>
 </div>
 </div>
 
 <!-- History -->
-<div class="glass fade-in" style="padding:1rem 1.5rem;margin-bottom:6rem;">
-<div class="flex items-center gap-3">
-<div style="width:32px;height:32px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(245,158,11,.1),rgba(245,158,11,.05));border:1px solid rgba(245,158,11,.1);font-size:.8rem;">📋</div>
-<div><h2 class="text-sm font-semibold">Recent Analyses</h2></div>
-<button id="clear-history" class="btn" style="margin-left:auto;padding:4px 12px;font-size:.68rem;background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.15);border-radius:var(--radius-md);">Clear</button>
+<div class="glass fade-in glass-glow" style="padding:1rem 1.5rem;margin-bottom:6rem;">
+<div class="flex-col-center gap-2">
+<div class="flex items-center gap-2"><span class="heading-bar"></span><h2 class="section-heading section-heading-sm">📋 Recent Analyses</h2><span class="heading-bar" style="background:linear-gradient(180deg,#8b5cf6,#22d3ee);"></span></div>
 </div>
-<div id="history-list" class="flex flex-wrap gap-2 mt-3"></div>
+<div id="history-list" class="flex flex-wrap gap-3 mt-3 justify-center"></div>
+<div class="flex-center mt-3">
+<button id="clear-history" class="btn" style="padding:4px 16px;font-size:.68rem;background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.15);border-radius:var(--radius-md);">Clear History</button>
+</div>
 </div>
 
 </main>
 
-<footer class="text-center py-8" style="border-top:1px solid var(--border);color:var(--text-muted);font-size:.72rem;">
-AI Resume Analyzer &mdash; Intelligent ATS Optimization &mdash; Powered by Django + AI
+<footer class="flex-col-center text-center py-8" style="border-top:1px solid var(--border);color:var(--text-muted);font-size:.72rem;">
+<div class="flex-center gap-4 mb-2">
+<span style="color:var(--text3);font-size:.68rem;cursor:pointer;transition:color .2s;" onmouseover="this.style.color='#22d3ee'" onmouseout="this.style.color=''">About</span>
+<span style="color:var(--text3);font-size:.68rem;cursor:pointer;transition:color .2s;" onmouseover="this.style.color='#22d3ee'" onmouseout="this.style.color=''">Privacy</span>
+<span style="color:var(--text3);font-size:.68rem;cursor:pointer;transition:color .2s;" onmouseover="this.style.color='#22d3ee'" onmouseout="this.style.color=''">Terms</span>
+<span style="color:var(--text3);font-size:.68rem;cursor:pointer;transition:color .2s;" onmouseover="this.style.color='#22d3ee'" onmouseout="this.style.color=''">Contact</span>
+</div>
+AI Resume Analyzer &mdash; Intelligent ATS Optimization &mdash; Made with ❤️
 </footer>
 
 <!-- Preview Modal -->
@@ -393,6 +496,7 @@ function showPreview(text){lastExtractedText=text;document.getElementById('previ
 // ─── JD Presets ───────────────────
 const jdPresets={senior:'We are looking for a Senior Software Engineer with 5+ years of experience building scalable applications. Must have strong proficiency in Python, JavaScript, React, Node.js, and cloud platforms (AWS/GCP). Experience with Docker, Kubernetes, CI/CD pipelines, and microservices architecture.',frontend:'We are hiring a Frontend Developer skilled in React, TypeScript, HTML5, CSS3, and modern frontend tooling. Experience with Next.js, Tailwind CSS, state management (Redux/Zustand), and responsive design.',data:'Seeking a Data Scientist with expertise in Python, pandas, scikit-learn, and SQL. Experience building ML models, feature engineering, and deploying to production. Knowledge of deep learning (PyTorch/TensorFlow), MLOps, and data visualization preferred.',devops:'Looking for a DevOps Engineer skilled in Docker, Kubernetes, Terraform, and CI/CD automation. Strong Linux administration, scripting (Python/Bash), and cloud platforms (AWS).'};
 function fillJD(role){document.getElementById('job-description').value=jdPresets[role];document.getElementById('job-description').dispatchEvent(new Event('input'));showToast('JD preset: '+role+' role','info',1500)}
+function switchJDTab(el,role){document.querySelectorAll('.jd-tab').forEach(t=>{t.style.background='transparent';t.style.color='var(--text3)'});el.style.background='rgba(6,182,212,.12)';el.style.color='#22d3ee';fillJD(role)}
 
 // ─── API Status ───────────────────
 (async function(){try{const r=await fetch('/api/health'),d=await r.json();if(d.status==='ok'){const dot=document.getElementById('status-dot');dot.style.background='#34d399';dot.style.boxShadow='0 0 8px rgba(16,185,129,.5)';document.getElementById('status-text').textContent='Connected'}}catch{}})()
@@ -434,7 +538,7 @@ if(ready){dot.style.background='#34d399';dot.style.boxShadow='0 0 10px rgba(16,1
 jd.addEventListener('input',function(){checkReady();updateJDStats()});
 checkReady();
 
-function updateJDStats(){const text=jd.value.trim();if(!text||text.length<15){jdStats.classList.add('hidden');return}const words=text.split(/\s+/).length,chars=text.length,sentences=text.split(/[.!?]+/).filter(s=>s.trim()).length;jdStats.classList.remove('hidden');jdStats.innerHTML=`<span class="badge badge-primary">${words} words</span><span class="badge badge-primary">${chars} chars</span><span class="badge badge-primary">${sentences} sentences</span>`;const tech=['python','javascript','typescript','java','react','aws','docker','kubernetes','sql','node','api','git','agile','cloud','ml','ai','devops','mobile','testing','security','rust','go','graphql','redis','postgres','mongodb','terraform','kubernetes'];const found=tech.filter(t=>text.toLowerCase().includes(t));const ei=document.getElementById('jd-insights');if(!ei&&found.length){const ne=document.createElement('div');ne.id='jd-insights';ne.className='flex flex-wrap gap-1.5 mt-2';jd.after(ne)}const e2=document.getElementById('jd-insights');if(e2){e2.innerHTML=found.length?`<span style="font-size:.6rem;color:var(--text3);padding-top:2px;">Keywords:</span>${found.slice(0,10).map(t=>`<span class="badge badge-primary" style="font-size:.55rem;">${t}</span>`).join('')}`:''}}
+function updateJDStats(){const text=jd.value.trim();if(!text||text.length<15){jdStats.classList.add('hidden');return}const words=text.split(/\s+/).length,chars=text.length,sentences=text.split(/[.!?]+/).filter(s=>s.trim()).length;jdStats.classList.remove('hidden');jdStats.innerHTML=`<span class="badge badge-primary">${words} words</span><span class="badge badge-primary">${chars} chars</span><span class="badge badge-primary">${sentences} sentences</span>`;const tech=['python','javascript','typescript','java','react','aws','docker','kubernetes','sql','node','api','git','agile','cloud','ml','ai','devops','mobile','testing','security','rust','go','graphql','redis','postgres','mongodb','terraform','kubernetes'];const found=tech.filter(t=>text.toLowerCase().includes(t));const ei=document.getElementById('jd-insights');if(!ei&&found.length){const ne=document.createElement('div');ne.id='jd-insights';ne.className='flex flex-wrap gap-1.5 mt-2 justify-center';jd.after(ne)}const e2=document.getElementById('jd-insights');if(e2){e2.innerHTML=found.length?`<span style="font-size:.6rem;color:var(--text3);padding-top:2px;">Keywords:</span>${found.slice(0,10).map(t=>`<span class="badge badge-primary" style="font-size:.55rem;">${t}</span>`).join('')}`:''}}
 
 // ─── Analysis ─────────────────────
 async function startAnalysis(){
@@ -472,6 +576,7 @@ function rh(){const h=gh(),list=document.getElementById('history-list');if(!h.le
 document.getElementById('clear-history').addEventListener('click',()=>{localStorage.removeItem(HK);rh();showToast('History cleared','info')});rh();
 
 // ─── Results ──────────────────────
+function switchResTab(el,tab){const tabs=document.querySelectorAll('.res-tab');tabs.forEach(t=>{t.style.background='transparent';t.style.color='var(--text2)';t.style.boxShadow='none'});el.style.background='linear-gradient(135deg,#06b6d4,#0891b2)';el.style.color='#fff';el.style.boxShadow='0 4px 15px rgba(6,182,212,.3)';document.querySelectorAll('.res-section').forEach(s=>s.style.display='none');const target=document.querySelector('.res-section[data-section="'+tab+'"]');if(target)target.style.display='block'}
 function showResults(d){
 results.classList.remove('hidden');
 const sc=d.ats_score,cl=sc>=80?'#10b981':sc>=60?'#f59e0b':sc>=40?'#f97316':'#ef4444';
@@ -481,44 +586,55 @@ const matched=d.matched_keywords||[],missing=d.missing_keywords||[];
 const sugCats=[{icon:'📄',label:'Content',color:'#06b6d4'},{icon:'🎯',label:'Keywords',color:'#8b5cf6'},{icon:'📐',label:'Format',color:'#fbbf24'},{icon:'💪',label:'Skills',color:'#34d399'}];
 const breakdownHTML=d.breakdown?Object.entries(d.breakdown).map(([k,v])=>{const p=Math.round(v);const g=p>=80?'linear-gradient(90deg,#10b981,#059669)':p>=60?'linear-gradient(90deg,#f59e0b,#d97706)':'linear-gradient(90deg,#ef4444,#dc2626)';return`<div><div class="flex justify-between text-sm mb-1"><span style="color:var(--text2);text-transform:capitalize;">${k.replace(/_/g,' ')}</span><span style="color:${p>=60?'var(--text)':'#f87171'};font-weight:600">${p}%</span></div><div class="progress-track"><div class="progress-fill" style="width:${p}%;background:${g}"></div></div></div>`}).join(''):'';
 
-results.innerHTML=`
-<div class="glass p-5 sm:p-6 slide-up">
-<div class="flex flex-col sm:flex-row items-center gap-6">
-<div class="relative shrink-0" style="width:130px;height:130px;filter:drop-shadow(0 0 25px rgba(6,182,212,.15));">
-<svg width="130" height="130" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,.03)" stroke-width="8"/><circle cx="60" cy="60" r="52" fill="none" stroke="${cl}" stroke-width="8" stroke-linecap="round" stroke-dasharray="${circumference}" stroke-dashoffset="${offset}" class="score-ring"/></svg>
-<div class="absolute inset-0 flex flex-col items-center justify-center">
-<span style="font-size:1.8rem;font-weight:700;color:${cl};font-family:'Space Grotesk',sans-serif;">${Math.round(sc)}%</span>
+  const hasSuggestions=d.suggestions?.length>0,hasRoadmap=d.roadmap?.length>0,hasImprovement=d.skill_improvement?.length>0;
+  results.innerHTML=`
+<div class="flex flex-nowrap gap-1 mb-5 justify-center" style="padding:4px 6px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);overflow-x:auto;">
+<button class="res-tab active" data-tab="score" onclick="switchResTab(this,'score')" style="display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border:none;border-radius:8px;font-size:.68rem;font-weight:500;font-family:'Inter',sans-serif;cursor:pointer;transition:all .25s;white-space:nowrap;background:rgba(6,182,212,.12);color:#22d3ee;">📊 Score</button>
+<button class="res-tab" data-tab="keywords" onclick="switchResTab(this,'keywords')" style="display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border:none;border-radius:8px;font-size:.68rem;font-weight:500;font-family:'Inter',sans-serif;cursor:pointer;transition:all .25s;white-space:nowrap;background:transparent;color:var(--text3);">🔑 Keywords</button>
+<button class="res-tab" data-tab="suggestions" onclick="switchResTab(this,'suggestions')" style="display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border:none;border-radius:8px;font-size:.68rem;font-weight:500;font-family:'Inter',sans-serif;cursor:pointer;transition:all .25s;white-space:nowrap;background:transparent;color:var(--text3);">💡 Suggestions</button>
+<button class="res-tab" data-tab="roadmap" onclick="switchResTab(this,'roadmap')" style="display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border:none;border-radius:8px;font-size:.68rem;font-weight:500;font-family:'Inter',sans-serif;cursor:pointer;transition:all .25s;white-space:nowrap;background:transparent;color:var(--text3);">🗺️ Roadmap</button>
+<button class="res-tab" data-tab="improve" onclick="switchResTab(this,'improve')" style="display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border:none;border-radius:8px;font-size:.68rem;font-weight:500;font-family:'Inter',sans-serif;cursor:pointer;transition:all .25s;white-space:nowrap;background:transparent;color:var(--text3);">📈 Improve</button>
+</div>
+
+<div class="res-section" data-section="score">
+<div class="glass p-5 sm:p-6 slide-up glass-glow">
+<div class="flex-col-center gap-6">
+<div class="relative shrink-0" style="width:140px;height:140px;filter:drop-shadow(0 0 30px rgba(6,182,212,.2));">
+<svg width="140" height="140" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,.03)" stroke-width="8"/><circle cx="60" cy="60" r="52" fill="none" stroke="${cl}" stroke-width="8" stroke-linecap="round" stroke-dasharray="${circumference}" stroke-dashoffset="${offset}" class="score-ring"/></svg>
+<div class="absolute inset-0 flex-col-center">
+<span style="font-size:2rem;font-weight:700;color:${cl};font-family:'Space Grotesk',sans-serif;">${Math.round(sc)}%</span>
 <span style="color:var(--text2);font-size:.65rem;margin-top:1px;">ATS Score</span>
 </div>
 </div>
-<div class="text-center sm:text-left flex-1">
+<div class="text-center">
 <h3 style="font-size:1.3rem;font-weight:700;font-family:'Space Grotesk',sans-serif;">${lb}</h3>
 <p style="color:var(--text2);font-size:.85rem;">${matched.length} keywords matched, ${missing.length} missing</p>
-<div class="flex flex-wrap gap-2 mt-3">
-<span class="badge badge-success">${matched.length} Matched</span>
-<span class="badge badge-error">${missing.length} Missing</span>
-<span class="badge badge-primary">${(d.suggestions?.length||0)} Suggestions</span>
+<div class="flex-center flex-wrap gap-2 mt-3">
+<span class="badge badge-success">✓ ${matched.length} Matched</span>
+<span class="badge badge-error">✗ ${missing.length} Missing</span>
+<span class="badge badge-primary">💡 ${(d.suggestions?.length||0)} Suggestions</span>
 </div>
 </div>
 </div>
 </div>
+</div>
 
-${d.breakdown?`<div class="glass p-5 sm:p-6 slide-up"><h3 style="font-size:.9rem;font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>Score Breakdown</h3><div class="space-y-3">${breakdownHTML}</div></div>`:''}
+<div class="res-section" data-section="score">${d.breakdown?`<div class="glass p-5 sm:p-6 slide-up glass-glow"><div class="flex items-center justify-center gap-2 mb-4"><span class="heading-bar"></span><h3 style="font-size:.9rem;font-weight:600;display:flex;align-items:center;gap:8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>Score Breakdown</h3><span class="heading-bar" style="background:linear-gradient(180deg,#8b5cf6,#22d3ee);"></span></div><div class="max-w-2xl mx-auto space-y-3">${breakdownHTML}</div></div>`:''}</div>
 
-${matched.length?`<div class="glass p-5 sm:p-6 slide-up"><h3 style="font-size:.9rem;font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:8px;color:#34d399;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Matched Keywords <span class="badge badge-success" style="font-size:.55rem;">${matched.length}</span></h3><div class="flex flex-wrap gap-2">${matched.map(k=>`<span class="badge badge-success">${k}</span>`).join('')}</div></div>`:''}
+<div class="res-section" data-section="keywords">${matched.length||missing.length?`<div class="grid sm:grid-cols-2 gap-5">${matched.length?`<div class="glass p-5 sm:p-6 slide-up glass-glow"><div class="flex items-center justify-center gap-2 mb-4"><span class="heading-bar"></span><h3 style="font-size:.9rem;font-weight:600;display:flex;align-items:center;gap:8px;color:#34d399;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Matched <span class="badge badge-success" style="font-size:.55rem;">${matched.length}</span></h3><span class="heading-bar" style="background:linear-gradient(180deg,#8b5cf6,#22d3ee);"></span></div><div class="flex-center flex-wrap gap-2">${matched.map(k=>`<span class="badge badge-success">${k}</span>`).join('')}</div></div>`:''}${missing.length?`<div class="glass p-5 sm:p-6 slide-up glass-glow"><div class="flex items-center justify-center gap-2 mb-4"><span class="heading-bar"></span><h3 style="font-size:.9rem;font-weight:600;display:flex;align-items:center;gap:8px;color:#f87171;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>Missing <span class="badge badge-error" style="font-size:.55rem;">${missing.length}</span></h3><span class="heading-bar" style="background:linear-gradient(180deg,#8b5cf6,#22d3ee);"></span></div><div class="flex-center flex-wrap gap-2">${missing.map(k=>`<span class="badge badge-error">${k}</span>`).join('')}</div></div>`:''}</div>`:''}</div>
 
-${missing.length?`<div class="glass p-5 sm:p-6 slide-up"><h3 style="font-size:.9rem;font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:8px;color:#f87171;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>Missing Keywords <span class="badge badge-error" style="font-size:.55rem;">${missing.length}</span></h3><div class="flex flex-wrap gap-2">${missing.map(k=>`<span class="badge badge-error">${k}</span>`).join('')}</div></div>`:''}
+<div class="res-section" data-section="suggestions">${d.suggestions?.length?`<div class="glass p-5 sm:p-6 slide-up glass-glow"><div class="flex items-center justify-center gap-2 mb-4"><span class="heading-bar"></span><h3 style="font-size:.9rem;font-weight:600;display:flex;align-items:center;gap:8px;color:#22d3ee;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>Smart Suggestions <span class="badge badge-primary" style="font-size:.55rem;">${d.suggestions.length}</span></h3><span class="heading-bar" style="background:linear-gradient(180deg,#8b5cf6,#22d3ee);"></span></div><div class="grid sm:grid-cols-2 gap-3 max-w-3xl mx-auto">${d.suggestions.map((s,i)=>`<div class="sug-card slide-up text-center" style="animation-delay:${i*.06}s"><div class="flex-col-center gap-3"><div style="width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:${sugCats[i%sugCats.length].color}12;color:${sugCats[i%sugCats.length].color};font-size:.8rem;flex-shrink:0;">${sugCats[i%sugCats.length].icon}</div><p style="font-size:.78rem;color:var(--text2);line-height:1.6;text-align:center;">${s}</p></div></div>`).join('')}</div></div>`:''}</div>
 
-${d.suggestions?.length?`<div class="glass p-5 sm:p-6 slide-up"><h3 style="font-size:.9rem;font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:8px;color:#22d3ee;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>Smart Suggestions <span class="badge badge-primary" style="font-size:.55rem;">${d.suggestions.length}</span></h3><div class="grid sm:grid-cols-2 gap-3">${d.suggestions.map((s,i)=>`<div class="sug-card slide-up" style="animation-delay:${i*.06}s"><div class="flex items-start gap-3"><div style="width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:${sugCats[i%sugCats.length].color}12;color:${sugCats[i%sugCats.length].color};font-size:.7rem;flex-shrink:0;">${sugCats[i%sugCats.length].icon}</div><p style="font-size:.78rem;color:var(--text2);line-height:1.6;">${s}</p></div></div>`).join('')}</div></div>`:''}
+<div class="res-section" data-section="roadmap">${d.roadmap?.length?`<div class="glass p-5 sm:p-6 slide-up glass-glow"><div class="flex items-center justify-center gap-2 mb-4"><span class="heading-bar"></span><h3 style="font-size:.9rem;font-weight:600;display:flex;align-items:center;gap:8px;color:#a78bfa;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>Career Roadmap</h3><span class="heading-bar" style="background:linear-gradient(180deg,#8b5cf6,#22d3ee);"></span></div><div class="grid sm:grid-cols-3 gap-3 max-w-4xl mx-auto">${d.roadmap.map(r=>'<div class="rm-phase text-center"><div style="color:#a78bfa;font-size:.58rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.25rem;">'+r.month+'</div><div style="font-size:.8rem;font-weight:600;margin-bottom:.3rem;">'+r.title+'</div>'+(r.items?.length?'<ul style="list-style:none;padding:0;margin:0;">'+r.items.map(i=>'<li style="font-size:.7rem;color:var(--text3);padding:2px 0;display:flex;gap:6px;justify-content:center;"><span style="color:#a78bfa;">•</span>'+i+'</li>').join('')+'</ul>':'')+'</div>').join('')}</div></div>`:''}</div>
 
-${d.roadmap?.length?`<div class="glass p-5 sm:p-6 slide-up"><h3 style="font-size:.9rem;font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:8px;color:#a78bfa;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>Career Roadmap</h3><div class="grid sm:grid-cols-3 gap-3">${d.roadmap.map(r=>'<div class="rm-phase"><div style="color:#a78bfa;font-size:.58rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.25rem;">'+r.month+'</div><div style="font-size:.8rem;font-weight:600;margin-bottom:.3rem;">'+r.title+'</div>'+(r.items?.length?'<ul style="list-style:none;padding:0;margin:0;">'+r.items.map(i=>'<li style="font-size:.7rem;color:var(--text3);padding:2px 0;display:flex;gap:6px;"><span style="color:#a78bfa;">•</span>'+i+'</li>').join('')+'</ul>':'')+'</div>').join('')}</div></div>`:''}
-
-${d.skill_improvement?.length?`<div class="glass p-5 sm:p-6 slide-up"><h3 style="font-size:.9rem;font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:8px;color:#fbbf24;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>Improvement Plan</h3><div class="grid sm:grid-cols-2 gap-3">${d.skill_improvement.map(s=>'<div class="sug-card"><h4 style="font-size:.78rem;font-weight:600;color:#fbbf24;margin-bottom:4px;">'+(s.skill||s.area||'Skill')+'</h4>'+(s.steps?.length?'<ul style="list-style:none;padding:0;margin:0;">'+s.steps.map(st=>'<li style="font-size:.7rem;color:var(--text3);padding:2px 0;display:flex;gap:6px;"><span style="color:#fbbf24;">→</span>'+st+'</li>').join('')+'</ul>':'')+(s.resources?.length?'<div style="margin-top:4px;display:flex;flex-wrap:wrap;gap:4px;">'+s.resources.map(r=>'<span class="badge badge-primary" style="font-size:.55rem;">'+r+'</span>').join('')+'</div>':'')+'</div>').join('')}</div></div>`:''}
+<div class="res-section" data-section="improve">${d.skill_improvement?.length?`<div class="glass p-5 sm:p-6 slide-up glass-glow"><div class="flex items-center justify-center gap-2 mb-4"><span class="heading-bar"></span><h3 style="font-size:.9rem;font-weight:600;display:flex;align-items:center;gap:8px;color:#fbbf24;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>Improvement Plan</h3><span class="heading-bar" style="background:linear-gradient(180deg,#8b5cf6,#22d3ee);"></span></div><div class="grid sm:grid-cols-2 gap-3 max-w-3xl mx-auto">${d.skill_improvement.map(s=>'<div class="sug-card text-center"><h4 style="font-size:.78rem;font-weight:600;color:#fbbf24;margin-bottom:4px;">'+(s.skill||s.area||'Skill')+'</h4>'+(s.steps?.length?'<ul style="list-style:none;padding:0;margin:0;">'+s.steps.map(st=>'<li style="font-size:.7rem;color:var(--text3);padding:2px 0;display:flex;gap:6px;justify-content:center;"><span style="color:#fbbf24;">→</span>'+st+'</li>').join('')+'</ul>':'')+(s.resources?.length?'<div style="margin-top:4px;display:flex;flex-wrap:wrap;gap:4px;justify-content:center;">'+s.resources.map(r=>'<span class="badge badge-primary" style="font-size:.55rem;">'+r+'</span>').join('')+'</div>':'')+'</div>').join('')}</div></div>`:''}</div>
 
 <div class="text-center pt-4 slide-up">
-<button onclick="results.classList.add('hidden');window.scrollTo({top:0,behavior:'smooth'});" class="btn btn-primary">Analyze Another Resume</button>
+<button onclick="results.classList.add('hidden');window.scrollTo({top:0,behavior:'smooth'});" class="btn btn-primary scale-hover" style="max-width:300px;">Analyze Another Resume</button>
 </div>`;
 results.querySelectorAll('.slide-up').forEach((el,i)=>el.style.animationDelay=(i*.06)+'s');
+const firstSection=results.querySelector('.res-section[data-section]');
+if(firstSection){const tabName=firstSection.dataset.section;document.querySelectorAll('.res-section').forEach(s=>s.style.display='none');firstSection.style.display='block';document.querySelectorAll('.res-tab').forEach(t=>{t.style.background='transparent';t.style.color='var(--text2)';t.style.boxShadow='none'});const activeTab=document.querySelector('.res-tab[data-tab="'+tabName+'"]');if(activeTab){activeTab.style.background='linear-gradient(135deg,#06b6d4,#0891b2)';activeTab.style.color='#fff';activeTab.style.boxShadow='0 4px 15px rgba(6,182,212,.3)'}}
 setTimeout(()=>results.scrollIntoView({behavior:'smooth',block:'start'}),100);
 showToast('Analysis complete — score: '+Math.round(sc)+'%','success',4000);
 sh(sc,matched,missing,d.resume_name||fi.files[0]?.name||'Resume');
@@ -527,24 +643,33 @@ triggerConfetti();
 
 // ─── Roadmaps ─────────────────────
 const rmGrid=document.getElementById('roadmaps-grid');let rmData=[];
-(async function(){try{const r=await fetch('/api/roadmaps');rmData=await r.json();if(!rmData.length){rmGrid.innerHTML='<div style="color:var(--text2);text-align:center;padding:1.5rem;font-size:.8rem;">No roadmaps available.</div>';return}rmGrid.innerHTML=rmData.map((rm,i)=>`<div style="cursor:pointer;padding:1rem;border-radius:12px;background:var(--surface);border:1px solid var(--border);transition:all .3s;" onclick="showRm('${rm.filename}')"><div style="font-size:1.5rem;margin-bottom:2px;">${rm.emoji||'🗺️'}</div><div style="font-size:.78rem;font-weight:700;font-family:'Space Grotesk',sans-serif;">${rm.name}</div><div style="font-size:.62rem;color:var(--text2);margin-top:2px;line-height:1.4;">${(rm.description||'').substring(0,60)}${rm.description?.length>60?'...':''}</div></div>`).join('')}catch{rmGrid.innerHTML='<div style="color:var(--text2);text-align:center;padding:1.5rem;">Could not load roadmaps.</div>'}})();
+(async function(){try{const r=await fetch('/api/roadmaps');rmData=await r.json();if(!rmData.length){rmGrid.innerHTML='<div style="color:var(--text2);text-align:center;padding:1.5rem;font-size:.8rem;">No roadmaps available.</div>';return}rmGrid.innerHTML=rmData.map((rm,i)=>`<div class="glass" style="cursor:pointer;padding:1rem;border-radius:12px;background:var(--surface);border:1px solid var(--border);transition:all .3s;text-align:center;" onclick="showRm('${rm.filename}')"><div style="font-size:1.5rem;margin-bottom:2px;">${rm.emoji||'🗺️'}</div><div style="font-size:.78rem;font-weight:700;font-family:'Space Grotesk',sans-serif;">${rm.name}</div><div style="font-size:.62rem;color:var(--text2);margin-top:2px;line-height:1.4;">${(rm.description||'').substring(0,60)}${rm.description?.length>60?'...':''}</div></div>`).join('')}catch{rmGrid.innerHTML='<div style="color:var(--text2);text-align:center;padding:1.5rem;">Could not load roadmaps.</div>'}})();
 function showRm(filename){const rm=rmData.find(r=>r.filename===filename);if(!rm)return;const d=document.getElementById('roadmap-detail');d.classList.remove('hidden');d.scrollIntoView({behavior:'smooth',block:'start'})
-d.innerHTML=`<div class="glass p-5 sm:p-6 slide-up"><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-3"><div style="font-size:1.5rem;">${rm.emoji||'🗺️'}</div><div><h3 style="font-size:1rem;font-weight:700;">${rm.name}</h3><p style="color:var(--text3);font-size:.75rem;">${rm.description||''}</p></div></div><span style="display:inline-flex;align-items:center;gap:6px;color:#22d3ee;font-size:.7rem;font-weight:600;cursor:pointer;" onclick="document.getElementById\('roadmap-detail'\)\.classList\.add\('hidden'\);d\.innerHTML=''">← Back</span></div><div class="flex flex-wrap gap-2 mb-3">${rm.salary_range?`<span style="display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:var(--radius-full);font-size:.6rem;font-weight:500;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.15);color:#34d399;">💰 ${rm.salary_range}</span>`:''}${rm.growth?`<span style="display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:var(--radius-full);font-size:.6rem;font-weight:500;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.15);color:#fbbf24;">📈 ${rm.growth}</span>`:''}</div><div class="grid md:grid-cols-3 gap-3">${(rm.phases||[]).map((p,i)=>`<div class="rm-phase slide-up" style="animation-delay:${i*.08}s"><div class="flex items-center gap-2 mb-2"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${['#22d3ee','#a78bfa','#fbbf24'][i]};box-shadow:0 0 8px ${['rgba(6,182,212,.3)','rgba(139,92,246,.3)','rgba(245,158,11,.3)'][i]};"></span><div><div style="font-size:.58rem;color:${['#22d3ee','#a78bfa','#fbbf24'][i]};font-weight:600;text-transform:uppercase;letter-spacing:.06em;">${p.month}</div><div style="font-size:.78rem;font-weight:600;">${p.title}</div></div></div><ul style="list-style:none;padding:0;margin:0;">${(p.items||[]).map(item=>'<li style="font-size:.7rem;color:var(--text3);padding:3px 0;display:flex;gap:6px;"><span style="color:#22d3ee;">▹</span>'+item+'</li>').join('')}</ul></div>`).join('')}</div><div class="flex flex-wrap gap-2 mt-3">${(rm.skills||[]).map(s=>`<span style="padding:2px 8px;border-radius:9999px;font-size:.55rem;background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.12);color:#22d3ee;">${s}</span>`).join('')}</div></div>`}
+d.innerHTML=`<div class="glass p-5 sm:p-6 slide-up glass-glow"><div class="flex-col-center mb-4"><div class="flex items-center gap-3"><div style="font-size:1.5rem;">${rm.emoji||'🗺️'}</div><div class="text-center"><h3 style="font-size:1rem;font-weight:700;">${rm.name}</h3><p style="color:var(--text3);font-size:.75rem;">${rm.description||''}</p></div></div></div><div class="flex-center flex-wrap gap-2 mb-3">${rm.salary_range?`<span style="display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:var(--radius-full);font-size:.6rem;font-weight:500;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.15);color:#34d399;">💰 ${rm.salary_range}</span>`:''}${rm.growth?`<span style="display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:var(--radius-full);font-size:.6rem;font-weight:500;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.15);color:#fbbf24;">📈 ${rm.growth}</span>`:''}</div><div class="flex-center mb-3"><span style="display:inline-flex;align-items:center;gap:6px;color:#22d3ee;font-size:.7rem;font-weight:600;cursor:pointer;padding:4px 12px;border-radius:var(--radius-md);border:1px solid rgba(6,182,212,.15);transition:all .2s;" onclick="document.getElementById('roadmap-detail').classList.add('hidden');d.innerHTML=''" onmouseover="this.style.background='rgba(6,182,212,.1)'" onmouseout="this.style.background=''">← Back to Roadmaps</span></div><div class="grid md:grid-cols-3 gap-3">${(rm.phases||[]).map((p,i)=>`<div class="rm-phase slide-up text-center" style="animation-delay:${i*.08}s"><div class="flex-col-center gap-2 mb-2"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${['#22d3ee','#a78bfa','#fbbf24'][i]};box-shadow:0 0 12px ${['rgba(6,182,212,.4)','rgba(139,92,246,.4)','rgba(245,158,11,.4)'][i]};"></span><div class="text-center"><div style="font-size:.58rem;color:${['#22d3ee','#a78bfa','#fbbf24'][i]};font-weight:600;text-transform:uppercase;letter-spacing:.06em;">${p.month}</div><div style="font-size:.78rem;font-weight:600;">${p.title}</div></div></div><ul style="list-style:none;padding:0;margin:0;">${(p.items||[]).map(item=>'<li style="font-size:.7rem;color:var(--text3);padding:3px 0;display:flex;gap:6px;justify-content:center;"><span style="color:#22d3ee;">▹</span>'+item+'</li>').join('')}</ul></div>`).join('')}</div><div class="flex flex-wrap gap-2 mt-3">${(rm.skills||[]).map(s=>`<span style="padding:2px 8px;border-radius:9999px;font-size:.55rem;background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.12);color:#22d3ee;">${s}</span>`).join('')}</div></div>`}
+
+// ─── Scroll Progress + Back to Top ─
+(function(){const sp=document.getElementById('scroll-progress'),bt=document.getElementById('back-to-top');if(!sp)return;document.addEventListener('scroll',()=>{const s=window.scrollY,m=document.documentElement.scrollHeight-window.innerHeight;sp.style.width=Math.min(s/m*100,100)+'%';if(bt)bt.classList.toggle('visible',s>500)})})();
 
 // ─── Attract: Cursor Glow ─────────
 (function(){const g=document.getElementById('cursor-glow');if(!g)return;let mx=-999,my=-999;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;g.style.opacity='1';g.style.left=mx+'px';g.style.top=my+'px'});document.addEventListener('mouseleave',()=>{g.style.opacity='0'})})();
 
-// ─── Attract: Scroll Reveal ───────
-(function(){const els=document.querySelectorAll('.reveal');if(!els.length)return;const o=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:.1});els.forEach(el=>o.observe(el))})();
+// ─── Attract: Scroll Reveal V2 ─────
+(function(){const els=document.querySelectorAll('.reveal');if(!els.length)return;const o=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:.1,margin:'0px 0px -50px 0px'});els.forEach(el=>o.observe(el))})();
 
-// ─── Attract: Typewriter Effect ───
-(function(){const el=document.getElementById('typewriter-text');if(!el)return;const txt=el.textContent;el.textContent='';let i=0;const iv=setInterval(()=>{if(i<txt.length){el.textContent+=txt[i];i++}else{clearInterval(iv);document.getElementById('cursor-blink').style.display='none'}},18)})();
+// ─── Attract: Typewriter + Rotating ─
+(function(){const el=document.getElementById('typewriter-text');if(!el)return;const original=el.textContent,phrases=['land your dream job','ace your interviews','get more callbacks','beat the ATS system','stand out from the crowd'];el.textContent='';let i=0,pi=0;const iv=setInterval(()=>{if(i<original.length){el.textContent+=original[i];i++}else{clearInterval(iv);document.getElementById('cursor-blink').style.display='none';setTimeout(()=>{el.textContent='';pi=0;let ci=0;const iv2=setInterval(()=>{const p=phrases[pi];if(ci<p.length){el.textContent=p.substring(0,ci+1);ci++}else{ci=0;pi=(pi+1)%phrases.length;if(pi===0){clearInterval(iv2);el.textContent=original;setTimeout(()=>{document.getElementById('cursor-blink').style.display=''},100)}}},55)},1500)}},22)})();
 
-// ─── Attract: Rotating Phrases ────
-(function(){const el=document.getElementById('typewriter-text');if(!el)return;const phrases=['land your dream job','ace your interviews','get more callbacks','beat the ATS system','stand out from the crowd'];let pi=0;setInterval(()=>{pi=(pi+1)%phrases.length;el.textContent=phrases[pi];el.style.transition='opacity .3s';el.style.opacity='0';setTimeout(()=>{el.style.opacity='1'},300)},4000)})();
+// ─── 3D Tilt Cards ─────────────────
+(function(){document.querySelectorAll('.feature-card,.sug-card,.rm-phase').forEach(c=>{c.style.transition='transform .1s ease';c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(400px) rotateX(${-y*6}deg) rotateY(${x*6}deg) scale(1.02)`;const sh=c.querySelector('.card-shine');if(sh)sh.style.background=`radial-gradient(circle at ${(e.clientX-r.left)/r.width*100}% ${(e.clientY-r.top)/r.height*100}%,rgba(255,255,255,.08),transparent 60%)`});c.addEventListener('mouseleave',()=>{c.style.transform='';const sh=c.querySelector('.card-shine');if(sh)sh.style.background=''})})})();
 
-// ─── Attract: Magnetic Button ─────
-(function(){const btn=document.getElementById('analyze-btn');if(!btn)return;btn.addEventListener('mousemove',e=>{const r=btn.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;btn.style.transform=`translate(${x*.15}px,${y*.15}px)`});btn.addEventListener('mouseleave',()=>{btn.style.transform=''});btn.addEventListener('click',()=>{btn.style.transform='scale(.97)';setTimeout(()=>btn.style.transform='',150)})})();
+// ─── Button Ripple ──────────────────
+(function(){document.querySelectorAll('.btn-primary,.btn-secondary').forEach(b=>{b.addEventListener('click',function(e){if(b.disabled)return;const r=b.getBoundingClientRect(),ri=document.createElement('span');ri.className='btn-ripple';ri.style.left=e.clientX-r.left+'px';ri.style.top=e.clientY-r.top+'px';ri.style.width=ri.style.height='20px';b.appendChild(ri);setTimeout(()=>ri.remove(),600)})})})();
+
+// ─── Magnetic Button ────────────────
+(function(){const btn=document.getElementById('analyze-btn');if(!btn)return;btn.addEventListener('mousemove',e=>{if(btn.disabled)return;const r=btn.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;btn.style.transform=`translate(${x*.15}px,${y*.15}px)`});btn.addEventListener('mouseleave',()=>{btn.style.transform=''});btn.addEventListener('click',()=>{if(btn.disabled)return;btn.style.transform='scale(.97)';setTimeout(()=>btn.style.transform='',150)})})();
+
+// ─── Keyboard Shortcuts Enhancement ─
+document.addEventListener('keydown',e=>{if(e.key==='?'&&!(e.target.tagName==='TEXTAREA'||e.target.tagName==='INPUT'))showKbd()});
 </script>
 </body>
 </html>

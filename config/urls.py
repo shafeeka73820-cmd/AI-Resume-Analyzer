@@ -1,7 +1,7 @@
 from django.urls import path, include
-from api import views
+from backend.api import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('api/', include('api.urls')),
+    path('api/', include('backend.api.urls')),
 ]

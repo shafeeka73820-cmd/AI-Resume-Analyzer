@@ -4,9 +4,15 @@ const API = '/api';
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', () => {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => {
+      c.classList.remove('active');
+      c.style.animation = 'none';
+      void c.offsetWidth;
+    });
     tab.classList.add('active');
-    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    const content = document.getElementById('tab-' + tab.dataset.tab);
+    content.classList.add('active');
+    content.style.animation = 'fadeIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1)';
     document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
     document.querySelector(`.nav-links a[href="#${tab.dataset.tab}"]`)?.classList.add('active');
   });
