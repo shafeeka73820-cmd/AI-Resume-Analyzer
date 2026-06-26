@@ -4,15 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Resume Analyzer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+
+<div class="orb-bg"></div>
+<div class="grid-bg"></div>
+
 <nav class="nav">
   <div class="nav-inner">
-    <span class="nav-brand">AI Resume Analyzer</span>
+    <div class="nav-brand">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      <span>Resume Analyzer</span>
+    </div>
     <div class="nav-links">
       <a href="#analyze" class="active">Analyze</a>
-      <a href="#match">Match</a>
+      <a href="#match">Match Job</a>
       <a href="#batch">Batch</a>
       <a href="#history">History</a>
       <a href="#compare">Compare</a>
@@ -21,42 +31,104 @@
 </nav>
 
 <main class="container">
+  <div class="header-section">
+    <h1 class="title">AI Resume Analyzer</h1>
+    <p class="subtitle">Optimize your resume with AI-powered insights</p>
+  </div>
+
   <div class="tabs" id="tabs">
-    <button class="tab active" data-tab="analyze">Analyze</button>
-    <button class="tab" data-tab="match">Match Job</button>
-    <button class="tab" data-tab="batch">Batch</button>
-    <button class="tab" data-tab="history">History</button>
-    <button class="tab" data-tab="compare">Compare</button>
+    <button class="tab active" data-tab="analyze">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Analyze
+    </button>
+    <button class="tab" data-tab="match">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+      Match Job
+    </button>
+    <button class="tab" data-tab="batch">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Batch
+    </button>
+    <button class="tab" data-tab="history">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      History
+    </button>
+    <button class="tab" data-tab="compare">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Compare
+    </button>
   </div>
 
   <!-- ANALYZE TAB -->
   <section id="tab-analyze" class="tab-content active">
     <div class="card dropzone" id="dropzone-analyze">
       <div class="dropzone-content">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        <p class="dropzone-text">Drop a resume here or <strong>browse</strong></p>
-        <p class="dropzone-hint">PDF, DOCX, or TXT</p>
+        <div class="dropzone-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        </div>
+        <p class="dropzone-text">Drop your resume here or <strong>browse files</strong></p>
+        <p class="dropzone-hint">Supports PDF, DOCX, or TXT — Max 10MB</p>
       </div>
       <input type="file" id="file-input-analyze" accept=".pdf,.docx,.txt" hidden>
     </div>
     <div class="card results" id="results-analyze" hidden>
       <div class="results-header">
         <h2 id="result-filename"></h2>
-        <button class="btn btn-sm" id="export-pdf">Export PDF</button>
+        <button class="btn btn-sm" id="export-pdf">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export PDF
+        </button>
       </div>
-      <div class="score-ring" id="ats-score-ring">
-        <svg viewBox="0 0 120 120">
-          <circle cx="60" cy="60" r="54" class="ring-bg"/>
-          <circle cx="60" cy="60" r="54" class="ring-fg" id="score-ring"/>
-          <text x="60" y="60" text-anchor="middle" dominant-baseline="central" class="score-text" id="score-text">0</text>
-        </svg>
-        <p class="score-label">ATS Score</p>
+      <div class="score-section">
+        <div class="score-ring" id="ats-score-ring">
+          <svg viewBox="0 0 120 120">
+            <defs>
+              <linearGradient id="score-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6c5ce7"/>
+                <stop offset="100%" stop-color="#a29bfe"/>
+              </linearGradient>
+              <linearGradient id="score-grad-low" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#e17055"/>
+                <stop offset="100%" stop-color="#fab1a0"/>
+              </linearGradient>
+              <linearGradient id="score-grad-mid" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fdcb6e"/>
+                <stop offset="100%" stop-color="#ffeaa7"/>
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="54" class="ring-bg"/>
+            <circle cx="60" cy="60" r="54" class="ring-fg" id="score-ring"/>
+            <text x="60" y="60" text-anchor="middle" dominant-baseline="central" class="score-text" id="score-text">0</text>
+          </svg>
+          <div class="score-label-group">
+            <p class="score-label">ATS Score</p>
+            <p class="score-sub-label">Overall compatibility</p>
+          </div>
+        </div>
       </div>
       <div class="breakdown" id="breakdown"></div>
       <div class="suggestions" id="suggestions"></div>
-      <div class="section" id="section-skills"><h3>Skills</h3><div class="tags" id="skills-list"></div></div>
-      <div class="section" id="section-experience"><h3>Experience</h3><div id="experience-list"></div></div>
-      <div class="section" id="section-education"><h3>Education</h3><div id="education-list"></div></div>
+      <div class="section" id="section-skills">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          Skills
+        </h3>
+        <div class="tags" id="skills-list"></div>
+      </div>
+      <div class="section" id="section-experience">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          Experience
+        </h3>
+        <div id="experience-list"></div>
+      </div>
+      <div class="section" id="section-education">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Education
+        </h3>
+        <div id="education-list"></div>
+      </div>
     </div>
   </section>
 
@@ -64,25 +136,44 @@
   <section id="tab-match" class="tab-content">
     <div class="card dropzone" id="dropzone-match">
       <div class="dropzone-content">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <div class="dropzone-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        </div>
         <p class="dropzone-text">Drop a resume here or <strong>browse</strong></p>
         <p class="dropzone-hint">PDF, DOCX, or TXT</p>
       </div>
       <input type="file" id="file-input-match" accept=".pdf,.docx,.txt" hidden>
     </div>
     <div class="card">
-      <label class="label" for="jd-input">Job Description</label>
+      <label class="label" for="jd-input">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Job Description
+      </label>
       <textarea id="jd-input" rows="8" placeholder="Paste the job description here..."></textarea>
-      <button class="btn btn-primary" id="btn-match">Match Resume vs Job</button>
+      <button class="btn btn-primary" id="btn-match">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Match Resume vs Job
+      </button>
     </div>
     <div class="card results" id="results-match" hidden>
-      <div class="score-ring">
-        <svg viewBox="0 0 120 120">
-          <circle cx="60" cy="60" r="54" class="ring-bg"/>
-          <circle cx="60" cy="60" r="54" class="ring-fg" id="match-ring"/>
-          <text x="60" y="60" text-anchor="middle" dominant-baseline="central" class="score-text" id="match-score-text">0</text>
-        </svg>
-        <p class="score-label">Match Score</p>
+      <div class="score-section">
+        <div class="score-ring">
+          <svg viewBox="0 0 120 120">
+            <defs>
+              <linearGradient id="match-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6c5ce7"/>
+                <stop offset="100%" stop-color="#a29bfe"/>
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="54" class="ring-bg"/>
+            <circle cx="60" cy="60" r="54" class="ring-fg" id="match-ring"/>
+            <text x="60" y="60" text-anchor="middle" dominant-baseline="central" class="score-text" id="match-score-text">0</text>
+          </svg>
+          <div class="score-label-group">
+            <p class="score-label">Match Score</p>
+            <p class="score-sub-label">Resume vs Job alignment</p>
+          </div>
+        </div>
       </div>
       <div class="breakdown" id="match-breakdown"></div>
       <div class="suggestions" id="match-suggestions"></div>
@@ -94,15 +185,20 @@
     <div class="card">
       <div class="card dropzone" id="dropzone-batch" style="margin-bottom:16px">
         <div class="dropzone-content">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <div class="dropzone-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
           <p class="dropzone-text">Drop multiple resumes or <strong>browse</strong></p>
           <p class="dropzone-hint">Select multiple files at once</p>
         </div>
         <input type="file" id="file-input-batch" accept=".pdf,.docx,.txt" multiple hidden>
       </div>
-      <label class="label" for="jd-batch">Job Description (optional — for matching)</label>
+      <label class="label" for="jd-batch">Job Description <span class="label-hint">(optional — for matching)</span></label>
       <textarea id="jd-batch" rows="5" placeholder="Paste job description for match scoring..."></textarea>
-      <button class="btn btn-primary" id="btn-batch">Analyze All</button>
+      <button class="btn btn-primary" id="btn-batch">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Analyze All
+      </button>
     </div>
     <div class="card results" id="results-batch" hidden>
       <h3 style="margin-bottom:12px">Batch Results</h3>
@@ -114,7 +210,12 @@
   <!-- HISTORY TAB -->
   <section id="tab-history" class="tab-content">
     <div class="card">
-      <div class="results-header"><h3>Analysis History</h3></div>
+      <div class="results-header">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Analysis History
+        </h3>
+      </div>
       <div id="history-list"><p class="dropzone-hint">Loading...</p></div>
     </div>
   </section>
@@ -122,9 +223,12 @@
   <!-- COMPARE TAB -->
   <section id="tab-compare" class="tab-content">
     <div class="card">
-      <label class="label" for="compare-ids">Analysis IDs (comma-separated, min 2)</label>
-      <input type="text" id="compare-ids" placeholder="e.g. 1, 2, 3" style="width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text);padding:12px;font-size:14px">
-      <button class="btn btn-primary" id="btn-compare">Compare</button>
+      <label class="label" for="compare-ids">Analysis IDs <span class="label-hint">(comma-separated, min 2)</span></label>
+      <input type="text" id="compare-ids" placeholder="e.g. 1, 2, 3">
+      <button class="btn btn-primary" id="btn-compare">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Compare
+      </button>
     </div>
     <div class="card results" id="results-compare" hidden>
       <div id="compare-table-wrapper"></div>
@@ -134,7 +238,7 @@
 
 <div class="spinner" id="spinner" hidden>
   <div class="spinner-ring"></div>
-  <p>Working...</p>
+  <p>Analyzing your resume...</p>
 </div>
 
 <script src="/static/app.js"></script>

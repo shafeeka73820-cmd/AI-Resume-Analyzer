@@ -1,0 +1,47 @@
+{
+  "name": "Data Scientist",
+  "emoji": "🤖",
+  "description": "Turn raw data into actionable insights using statistical analysis, machine learning, and data visualization techniques.",
+  "color": "#8b5cf6",
+  "phases": [
+    {
+      "month": "Month 1",
+      "title": "Statistics & Python Foundations",
+      "items": [
+        "📐 Master statistics: probability, distributions, hypothesis testing, Bayesian inference",
+        "💻 Python for data science: pandas, NumPy, data cleaning & transformation",
+        "📊 Learn data visualization: matplotlib, seaborn, Plotly for exploratory analysis",
+        "🗄️ SQL for data: complex queries, window functions, CTEs, ETL basics",
+        "🔧 Set up Jupyter, VS Code, Git, and reproducible analysis workflows",
+        "📚 Read 'Python for Data Analysis' (McKinney) and complete practice datasets"
+      ]
+    },
+    {
+      "month": "Month 2",
+      "title": "Machine Learning & Modeling",
+      "items": [
+        "🧠 Learn ML fundamentals: supervised (regression, classification) and unsupervised (clustering)",
+        "📐 Master scikit-learn: pipelines, cross-validation, hyperparameter tuning, feature engineering",
+        "🤖 Introduction to deep learning with TensorFlow or PyTorch (neural networks basics)",
+        "📊 Feature engineering & selection: handling missing data, encoding, scaling, PCA",
+        "🧪 Evaluate models: confusion matrix, ROC-AUC, precision/recall, bias-variance tradeoff",
+        "📚 Work through Kaggle competitions (Titanic, House Prices) end-to-end"
+      ]
+    },
+    {
+      "month": "Month 3",
+      "title": "MLOps & Production Data Science",
+      "items": [
+        "☁️ Deploy models as APIs (FastAPI + MLflow, BentoML, or SageMaker)",
+        "🔧 Set up experiment tracking (MLflow, Weights & Biases) and model registry",
+        "🗄️ Work with big data: Spark, Dask, or Polars for large-scale processing",
+        "📐 Build data pipelines with Airflow, dbt, or Prefect for automated workflows",
+        "📊 Create interactive dashboards (Streamlit, Dash, or Tableau) for stakeholders",
+        "💼 Capstone: end-to-end ML project with monitoring, CI/CD, and A/B testing"
+      ]
+    }
+  ],
+  "skills": ["Python", "pandas", "scikit-learn", "TensorFlow", "PyTorch", "SQL", "Statistics", "MLflow", "Airflow", "Spark", "Tableau"],
+  "salary_range": "$95K - $170K",
+  "growth": "35% (2024-2034)"
+}

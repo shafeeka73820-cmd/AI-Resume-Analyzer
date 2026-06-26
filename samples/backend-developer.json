@@ -1,0 +1,47 @@
+{
+  "name": "Backend Developer",
+  "emoji": "⚙️",
+  "description": "Build scalable server-side systems, RESTful APIs, and distributed architectures using modern languages and cloud infrastructure.",
+  "color": "#3b82f6",
+  "phases": [
+    {
+      "month": "Month 1",
+      "title": "Core Backend Foundations",
+      "items": [
+        "💻 Master Python (or Go/Java): data structures, OOP, concurrency, error handling",
+        "🌐 Understand HTTP/HTTPS, RESTful API design principles, status codes",
+        "🗄️ Learn SQL and a relational database (PostgreSQL): modeling, queries, indexing",
+        "🔧 Set up a web framework (FastAPI, Django, or Express.js) with routing & middleware",
+        "📦 Use Git, virtual environments (venv/poetry), and dependency management",
+        "🧪 Write unit and integration tests with pytest, unittest, or Jest"
+      ]
+    },
+    {
+      "month": "Month 2",
+      "title": "APIs, Databases & Scaling",
+      "items": [
+        "🔌 Build production REST APIs with authentication (JWT, OAuth2)",
+        "🗄️ Deepen database skills: migrations (Alembic), ORMs (SQLAlchemy, Prisma)",
+        "📐 Learn caching strategies (Redis, CDN), rate limiting, pagination",
+        "☁️ Containerize apps with Docker, write Docker Compose for multi-service setups",
+        "📊 Implement logging (structlog), monitoring (Prometheus), error tracking (Sentry)",
+        "⚡ Optimize query performance: EXPLAIN ANALYZE, connection pooling, N+1 fixes"
+      ]
+    },
+    {
+      "month": "Month 3",
+      "title": "Production Systems & Architecture",
+      "items": [
+        "🏗️ Design microservices vs monoliths, message queues (RabbitMQ, Kafka)",
+        "☁️ Deploy to cloud (AWS EC2/ECS, GCP Cloud Run, or Railway)",
+        "🔧 Set up CI/CD pipelines (GitHub Actions, GitLab CI) with automated tests",
+        "📐 Implement event-driven architecture, webhooks, WebSockets",
+        "🛡️ Apply security best practices: SQL injection, XSS, CSRF, rate limiting, secrets management",
+        "💼 Build a capstone project: multi-service backend with docs, tests, and CI/CD"
+      ]
+    }
+  ],
+  "skills": ["Python", "FastAPI", "Django", "PostgreSQL", "Redis", "Docker", "AWS", "REST", "GraphQL", "pytest", "Git"],
+  "salary_range": "$90K - $160K",
+  "growth": "23% (2024-2034)"
+}

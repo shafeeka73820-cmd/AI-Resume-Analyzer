@@ -5,7 +5,7 @@ import re
 import uuid
 import pdfplumber
 from docx import Document
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 from django.conf import settings
@@ -150,13 +150,13 @@ def upload_file(request):
 @api_view(['POST'])
 def analyze_resume(request):
     resume_text = request.data.get('resumeText')
-    job_description = request.data.get('jobDescription')
+    job_description = request.data.get('jobDescription', '') or 'general software engineering role'
     user_email = request.data.get('userEmail', 'anonymous@example.com')
     resume_name = request.data.get('resumeName', 'resume.pdf')
 
-    if not resume_text or not job_description:
+    if not resume_text:
         return Response(
-            {'error': 'resumeText and jobDescription are required'},
+            {'error': 'resumeText is required'},
             status=status.HTTP_400_BAD_REQUEST
         )
 
@@ -190,7 +190,7 @@ def analyze_resume(request):
                 'matched_keywords': analysis['matched_keywords'],
                 'missing_keywords': analysis['missing_keywords'],
                 'suggestions': analysis['suggestions'],
-                'created_at': datetime.utcnow().isoformat(),
+                'created_at': datetime.now(timezone.utc).isoformat(),
             }).execute()
         except Exception as e:
             print(f'Supabase insert warning: {e}')
@@ -199,5 +199,34 @@ def analyze_resume(request):
 
 
 @api_view(['GET'])
+def list_roadmaps(request):
+    samples_dir = Path(settings.BASE_DIR) / 'samples'
+    roadmaps = []
+    if samples_dir.exists():
+        for f in sorted(samples_dir.glob('*.json')):
+            try:
+                data = json.loads(f.read_text(encoding='utf-8'))
+                if 'phases' in data and 'name' in data:
+                    data['filename'] = f.name
+                    roadmaps.append(data)
+            except Exception:
+                pass
+    return Response(roadmaps)
+
+
+@api_view(['GET'])
+def get_roadmap(request, filename):
+    samples_dir = Path(settings.BASE_DIR) / 'samples'
+    file_path = samples_dir / filename
+    if not file_path.exists() or not file_path.is_file():
+        return Response({'error': 'Roadmap not found'}, status=404)
+    try:
+        data = json.loads(file_path.read_text(encoding='utf-8'))
+        return Response(data)
+    except Exception as e:
+        return Response({'error': str(e)}, status=500)
+
+
+@api_view(['GET'])
 def health_check(request):
-    return Response({'status': 'ok', 'timestamp': datetime.utcnow().isoformat()})
+    return Response({'status': 'ok', 'timestamp': datetime.now(timezone.utc).isoformat()})

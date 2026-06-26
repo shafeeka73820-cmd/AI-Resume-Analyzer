@@ -1,0 +1,47 @@
+{
+  "name": "Frontend Developer",
+  "emoji": "🎨",
+  "description": "Master modern frontend development from HTML/CSS fundamentals to advanced React, TypeScript, and full-stack capabilities.",
+  "color": "#22d3ee",
+  "phases": [
+    {
+      "month": "Month 1",
+      "title": "Web Foundations",
+      "items": [
+        "📐 Master semantic HTML5 and CSS3 (flexbox, grid, responsive design)",
+        "💻 Learn JavaScript fundamentals: ES6+, DOM manipulation, async/await",
+        "🔧 Set up developer environment: VS Code, Git, Chrome DevTools",
+        "📦 Understand npm/yarn, module bundlers (Vite, Webpack basics)",
+        "🎯 Build a responsive landing page from scratch using only HTML/CSS/JS",
+        "📚 Study accessibility (ARIA, WCAG 2.1) and SEO best practices"
+      ]
+    },
+    {
+      "month": "Month 2",
+      "title": "Framework Mastery & Tooling",
+      "items": [
+        "⚛️ Learn React deeply: hooks, context, custom hooks, portals",
+        "🛠️ Master TypeScript: generics, utility types, advanced patterns",
+        "📐 Learn state management (Zustand, Redux Toolkit, or Jotai)",
+        "🧪 Write tests with Vitest, React Testing Library, Cypress",
+        "🎨 Style with Tailwind CSS, CSS modules, styled-components",
+        "⚡ Optimize performance: lazy loading, code splitting, bundle analysis"
+      ]
+    },
+    {
+      "month": "Month 3",
+      "title": "Production-Ready & Full Stack",
+      "items": [
+        "🔧 Build a complete project with Next.js (App Router, SSR, ISR)",
+        "☁️ Deploy to Vercel/Netlify, set up CI/CD with GitHub Actions",
+        "🗄️ Integrate APIs (REST, GraphQL with Apollo/URQL)",
+        "🤖 Add authentication (NextAuth, Clerk) and database (Supabase, Prisma)",
+        "📊 Monitor performance: Lighthouse, Core Web Vitals, Sentry",
+        "💼 Polish portfolio with 3 production-quality projects and case studies"
+      ]
+    }
+  ],
+  "skills": ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Git", "Vite", "Jest", "Cypress"],
+  "salary_range": "$80K - $150K",
+  "growth": "25% (2024-2034)"
+}

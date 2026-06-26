@@ -1,0 +1,47 @@
+{
+  "name": "DevOps Engineer",
+  "emoji": "☁️",
+  "description": "Bridge development and operations by automating infrastructure, managing cloud deployments, and ensuring system reliability at scale.",
+  "color": "#f59e0b",
+  "phases": [
+    {
+      "month": "Month 1",
+      "title": "Linux, Scripting & Cloud Basics",
+      "items": [
+        "🐧 Master Linux administration: bash, file systems, process management, networking",
+        "💻 Learn scripting with Python and Bash for automation tasks",
+        "🔧 Version control advanced: Git branching strategies, rebase, hooks, submodules",
+        "☁️ Cloud fundamentals: AWS (EC2, S3, VPC, IAM) or equivalent GCP/Azure",
+        "📦 Containerization with Docker: Dockerfiles, multi-stage builds, Docker Compose",
+        "📚 Study networking basics: DNS, HTTP, TCP/IP, load balancers, firewalls"
+      ]
+    },
+    {
+      "month": "Month 2",
+      "title": "Orchestration, CI/CD & IaC",
+      "items": [
+        "☸️ Kubernetes: pods, deployments, services, ConfigMaps, Helm charts",
+        "🔧 Infrastructure as Code with Terraform: modules, state management, remote backends",
+        "📐 CI/CD pipelines: GitHub Actions, GitLab CI, or Jenkins (declarative pipelines)",
+        "🛡️ Security: secrets management (Vault), SAST, container scanning, SBOM",
+        "📊 Monitoring & observability: Prometheus, Grafana, Loki, OpenTelemetry",
+        "🔗 Configuration management with Ansible: playbooks, roles, inventories"
+      ]
+    },
+    {
+      "month": "Month 3",
+      "title": "Production SRE & Platform Engineering",
+      "items": [
+        "🏗️ Design high-availability architectures: multi-AZ, auto-scaling, disaster recovery",
+        "⚡ Advanced Kubernetes: operators, service mesh (Istio), custom controllers, Karpenter",
+        "📐 GitOps with ArgoCD or Flux: declarative deployments, sync policies, PR-based workflows",
+        "🛡️ Security deep-dive: zero-trust, pod security, network policies, runtime security (Falco)",
+        "📊 SRE practices: SLIs/SLOs, error budgets, incident response, runbooks (PagerDuty)",
+        "💼 Capstone: design and deploy a production-grade multi-service platform with full observability"
+      ]
+    }
+  ],
+  "skills": ["Docker", "Kubernetes", "Terraform", "AWS", "Ansible", "Prometheus", "CI/CD", "Linux", "Git", "Python", "ArgoCD", "Helm"],
+  "salary_range": "$100K - $180K",
+  "growth": "28% (2024-2034)"
+}
