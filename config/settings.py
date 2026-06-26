@@ -1,8 +1,10 @@
 import os
+import sys
 from pathlib import Path
 import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(BASE_DIR))
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'default-unsafe-key-for-dev-only')
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
