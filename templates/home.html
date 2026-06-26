@@ -32,6 +32,9 @@
                 <button type="submit" id="submit-btn" class="w-full bg-indigo-600 text-white font-bold py-4 rounded-xl hover:bg-indigo-700 transition">Analyze My Resume</button>
             </form>
         </div>
+        <div id="status" class="mt-6 text-center text-sm text-slate-500">
+            API Status: <span id="api-status" class="font-semibold">checking...</span>
+        </div>
         <div id="results" class="mt-12 hidden">
             <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
                 <h2 class="text-2xl font-bold mb-4">Analysis Result</h2>
@@ -39,6 +42,42 @@
             </div>
         </div>
     </main>
-    <script src="/static/app.js"></script>
+    <script>
+        fetch('/api/health').then(r => r.json()).then(d => {
+            document.getElementById('api-status').textContent = d.status === 'ok' ? 'Connected' : 'Error';
+        }).catch(() => {
+            document.getElementById('api-status').textContent = 'Unreachable';
+            document.getElementById('api-status').className = 'text-red-500 font-semibold';
+        });
+
+        document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementById('resume');
+            if (!fileInput.files[0]) return alert('Please select a file');
+            const fd = new FormData();
+            fd.append('resume', fileInput.files[0]);
+            const btn = document.getElementById('submit-btn');
+            btn.disabled = true; btn.textContent = 'Uploading...';
+            try {
+                const uploadRes = await fetch('/api/upload', { method: 'POST', body: fd });
+                const uploadData = await uploadRes.json();
+                if (!uploadData.text) throw new Error(uploadData.error || 'Upload failed');
+                btn.textContent = 'Analyzing...';
+                const jd = prompt('Enter job description (optional):') || 'general software engineering role';
+                const analyzeRes = await fetch('/api/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ resumeText: uploadData.text, jobDescription: jd })
+                });
+                const analyzeData = await analyzeRes.json();
+                if (analyzeData.ats_score === undefined) throw new Error(analyzeData.error || 'Analysis failed');
+                document.getElementById('results').classList.remove('hidden');
+                document.getElementById('result-content').textContent = JSON.stringify(analyzeData, null, 2);
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+            btn.disabled = false; btn.textContent = 'Analyze My Resume';
+        });
+    </script>
 </body>
 </html>

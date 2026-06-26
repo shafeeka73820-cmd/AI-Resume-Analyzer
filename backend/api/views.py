@@ -1,3 +1,4 @@
+from django.shortcuts import render
 import json
 import os
 import re
@@ -13,6 +14,11 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from .utils import calculate_ats_score, generate_roadmap, generate_skill_improvement_plan
+
+def home(request):
+    return render(request, 'home.html')
+
+# ... rest of your code
 
 
 def _parse_pdf_to_roadmap(text, name):
